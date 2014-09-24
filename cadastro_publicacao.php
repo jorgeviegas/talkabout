@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Blog Post - Start Bootstrap Template</title>
+        <title>Talk About - Nova Publicação</title>
 
         <!-- Bootstrap Core CSS -->
         <!-- Custom CSS -->
@@ -17,42 +17,9 @@
     </head>
 
     <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Talk About </a>
-                </div>
-                <form class="navbar-form navbar-left" role="buscar"> 
-                    <div class="form-group"> 
-                        <input type="text" class="form-control" placeholder="Buscar"> 
-                    </div> <button type="submit" class="btn btn-default">Procurar</button> 
-                </form>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
+        <?php
+        include ('view/include_navbar.html');
+        ?>
 
         <!-- Page Content -->
         <div class="container">
@@ -93,11 +60,7 @@
                             <input type="file" id="exampleInputFile">
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                         </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Check me out
-                            </label>
-                        </div>
+                       
                         <button type="button" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
                         </button>                    </form>
@@ -106,77 +69,12 @@
 
                 </div>
 
-                <!-- Blog Sidebar Widgets Column -->
-                <div class="col-md-4">
-
-                    <!-- Blog Search Well -->
-                    <div class="well">
-                        <h4>Blog Search</h4>
-                        <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                        </div>
-                        <!-- /.input-group -->
-                    </div>
-
-                    <!-- Blog Categories Well -->
-                    <div class="well">
-                        <h4>Blog Categories</h4>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                    </div>
-
-                    <!-- Side Widget Well -->
-                    <div class="well">
-                        <h4>Side Widget Well</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                    </div>
-
-                </div>
-
             </div>
             <!-- /.row -->
 
             <hr>
 
-            <!-- Footer -->
-            <footer>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>Copyright &copy; Your Website 2014</p>
-                    </div>
-                </div>
-                <!-- /.row -->
-            </footer>
+          
 
         </div>
         <!-- /.container -->

@@ -8,14 +8,6 @@ class Publicacao {
     private $votos_down;
     private $instituicao;
     
-   // function __construct($descricao, $usuario, $votos_up, $votos_down, $instituicao) {
-   //    $this->descricao = $descricao;
-   //    $this->usuario = $usuario;
-   //     $this->votos_up = $votos_up;
-   //     $this->votos_down = $votos_down;
-   //     $this->instituicao = $instituicao;
-   // }
-    
    function __construct() {
    }
     

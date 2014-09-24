@@ -64,21 +64,4 @@ class Usuario {
         $this->publicacoes = $publicacoes;
     }
 
-    /* function realizarLogin(){
-      $login;
-      if($login){
-      echo "Login realizado com sucesso!";
-      } else{
-      echo "Falha ao realizar login!";
-      }
-      }
-     */
-    /*  function realizarLogoff(){
-      $logoff;
-      if($logoff){
-      echo "Logoff realizado com sucesso!";
-      } else{
-      echo "Falha ao realizar logoff!";
-      }
-      } */
 }

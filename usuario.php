@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Blog Post - Start Bootstrap Template</title>
+        <title>Talk About - Usuário</title>
 
         <!-- Bootstrap Core CSS -->
         <!-- Custom CSS -->
@@ -17,69 +17,28 @@
     </head>
 
     <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Talk About </a>
-                </div>
-                <form class="navbar-form navbar-left" role="buscar"> 
-                    <div class="form-group"> 
-                        <input type="text" class="form-control" placeholder="Buscar"> 
-                    </div> <button type="submit" class="btn btn-default">Procurar</button> 
-                </form>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
+        <?php
+        include ('view/include_navbar.html');
+        ?>
 
         <!-- Page Content -->
         <div class="container">
 
             <div class="row">
-                
+
                 <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
 
                     <!-- Blog Search Well -->
                     <div class="well">
-                        <h4>Blog Search</h4>
-                        <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                        </div>
+                        <img src ="view/imagens/jorge.jpg"></img>
                         <!-- /.input-group -->
                     </div>
 
-                    
+
                     <!-- Side Widget Well -->
                     <div class="well">
-                        <h4>Side Widget Well</h4>
+                        <h4>Conquistas</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                     </div>
 
@@ -92,70 +51,42 @@
 
                     <!-- Title -->
                     <h1>Jorge Viegas</h1>
-
                     <hr>
+                    <h3>Esteio, RS</h3>
+                   
+                    <BR>
+                    <BR>
+                    <h3>Informações de Contato</h3>
+                    <HR>
+                    <h4><b>Email:</b> jorgeviegas@live.com</h4>
+                    <h4><b>Fone: </b>(00)1234458</h4>
+                                        <BR>
+                    <BR>
 
                     <form role="form">
-                      
-
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Título da Publicação</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Instituição</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <textarea id="teste" class="form-control" rows="3" placeholder="Descricao"></textarea>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="exampleInputFile">Enviar foto</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Check me out
-                            </label>
+                            <label for="teste">Envie uma mensagem para Jorge:</label>
+                            <textarea id="teste" class="form-control" rows="3" placeholder="Mensagem"></textarea>
                         </div>
                         <button type="button" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
-                        </button>                    </form>
+                        </button>         
+                    </form>
 
                     <hr>
 
                 </div>
 
-                
+
 
             </div>
             <!-- /.row -->
-
             <hr>
-
-            <!-- Footer -->
-            <footer>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>Copyright &copy; Your Website 2014</p>
-                    </div>
-                </div>
-                <!-- /.row -->
-            </footer>
-
         </div>
         <!-- /.container -->
-
         <!-- jQuery Version 1.11.0 -->
         <script src="js/jquery-1.11.0.js"></script>
-
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-
     </body>
-
 </html>

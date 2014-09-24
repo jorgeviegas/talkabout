@@ -8,26 +8,6 @@
 
 class Funcoes {
 
-    static public function realizarCadastro($tcCodigo) {
-        $lnAux = 0;
-
-        for ($i = 0; $i <= strlen($tcCodigo); $i++) {
-            $lnAux = $lnAux + (int) substr($tcCodigo, $i, 1);
-        }
-        $lnAux = $lnAux * 3;
-        return $lnAux;
-    }
-
-    static public function validarMD5($tcCodigo) {
-        $lnAux = 0;
-
-        for ($i = 0; $i <= strlen($tcCodigo); $i++) {
-            $lnAux = $lnAux + (int) substr($tcCodigo, $i, 1);
-        }
-        $lnAux = $lnAux * 3;
-        return $lnAux;
-    }
-
     static public function calcularUltimoDia($tcMes, $tcAno) {
         $mes = $tcMes;
         $ano = $tcAno;
@@ -36,7 +16,6 @@ class Funcoes {
     }
 
     static public function montarCombo($tcTabela, $tcCampo, $tnInativo, $tnDistinct, $tnTodas, $tcNome, $tcId) {
-
 
         $conexao = new BancoDeDados();
         $conexaotrue = $conexao::Conectar();
