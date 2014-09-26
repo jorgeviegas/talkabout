@@ -107,5 +107,4 @@ class Funcoes {
         $user = new Usuario($userName, $senha, $email, $nome, $conquista, $amigos, $publicacoes);
         return $user;
     }
-
 }

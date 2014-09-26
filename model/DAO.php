@@ -1,16 +1,18 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
  * Description of DAO
  *
+ * 
+ * Esta classe implementa a interação entre o código e o Danco de Dados
+ * através das operações CRUD.
+ * 
+ * Parâmetros: No método construtor, recebe o nome da tabela do banco que será referenciada
+ * e seus respectivos Joins.
+ * 
  * @author Jorge
  */
+
 class DAO {
 
     private $pcNomeTabela;
@@ -44,7 +46,5 @@ class DAO {
         $result = mysql_query($lcQuery);
         return $result;
     }
-    
-  
-
 }
+

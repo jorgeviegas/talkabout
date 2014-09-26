@@ -1,5 +1,17 @@
 <?php
 
+/*
+ * Description of Cadastro
+ *
+ * 
+ * Este arquivo implementa a interação e as validações
+ * necessárias para o Cadastro do Usuário.
+ * 
+ * Parâmetros: Recebe os campos do formulário da View de Cadastro.
+ * 
+ * @author Jorge
+ */
+
 include '../model/BancoDeDados.php';
 include '../model/DAO.php';
 
@@ -12,17 +24,21 @@ if (isset($_POST['senha2'])) $lcSenha2 = $_POST['senha2'];
 
 $lcSenha = md5($lcSenha);
 
-$lcValores = '"'.$lcUsername.'","'.$lcSenha.'","'.$lcNome.'","'.$lcEmail.'"';
+$lcValores = '"'.$lcUsername.'","'.$lcSenha.'","'.$lcNome.'","'.$lcEmail.'",'.'0';
+
+echo $lcValores;
 
 $llConexao = new BancoDeDados();
 $llConexao->Conectar();
 
 $usuariosDAO = new DAO('usuarios');
-$usuariosDAO->inserir('username,senha,nome,email', $lcValores);
+$lcResutaldo = $usuariosDAO->inserir('username,senha,nome,email,id_foto', $lcValores);
 
 $your_email = $lcEmail;
 $email_subject = "Bem-vindo ao Talk About!";
 $email_content = "Bem-vindo ao Talk About, ".$lcNome. "!";
+
+echo $lcResutaldo;
 
 
 //if(@mail($your_email, $email_subject, $email_content)) {
@@ -32,9 +48,4 @@ $lcMensagem = 'Email enviado com Sucesso!';
 //}
 
 echo $lcMensagem;
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 ?>

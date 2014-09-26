@@ -38,7 +38,8 @@
 
                     <!-- Side Widget Well -->
                     <div class="well">
-                        <h4>Conquistas</h4>
+                        <h4><center>Conquistas</center></h4>
+                        <img src ="view/imagens/admin.jpg"></img>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                     </div>
 
@@ -50,7 +51,7 @@
                     <!-- Blog Post -->
 
                     <!-- Title -->
-                    <h1>Jorge Viegas</h1>
+                    <h1>Jorge Viegas (viegas)</h1>
                     <hr>
                     <h3>Esteio, RS</h3>
                    

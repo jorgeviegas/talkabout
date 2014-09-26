@@ -30,43 +30,26 @@
                     <!-- Title -->
                     <h1>Nova Publicação</h1>
                     <hr>
-                    <form role="form">
-
-
+                    <form role="form" method="post" enctype="multipart/form-data" action="controller/nova_publicacao.php">
                         <div class="form-group">
                             <label for="titulo">Título da Publicação</label>
                             <input type="text" class="form-control" id="titulo" placeholder="Título da Publicação">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Instituição</label>
-                            <select class="combobox">
-                                <option></option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="NY">New York</option>
-                                <option value="MD">Maryland</option>
-                                <option value="VA">Virginia</option>
-                            </select>
-                            <input type="text" class="form-control" id="outra" placeholder="Outra">
-                        </div>
-                        <div class="form-group">
                             <label for="exampleInputPassword1">Descrição</label>
                             <textarea id="teste" class="form-control" rows="3" placeholder="Descricao"></textarea>
                         </div>
-
-
                         <div class="form-group">
                             <label for="exampleInputFile">Enviar foto</label>
-                            <input type="file" id="exampleInputFile">
+                            <input type="file" name="arquivo" id="exampleInputFile">
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                         </div>
-                       
-                        <button type="button" class="btn btn-default btn-lg">
+
+                        <button type="submit" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
-                        </button>                    </form>
-
+                        </button>                    
+                    </form>
                     <hr>
-
                 </div>
 
             </div>
@@ -74,7 +57,7 @@
 
             <hr>
 
-          
+
 
         </div>
         <!-- /.container -->

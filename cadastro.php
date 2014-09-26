@@ -14,19 +14,31 @@
         </script> 
         <script>
             function validarFormulario(){
-                senha1 = document.registro.senha.value
-                senha2 = document.registro.senha2.value
-                erro = false
-                if (senha1 != senha2){
-                    erro = true
-                    document.getElementById(666).style.display='inline'
-                    document.getElementById(11).className="form-group has-error"
-                    document.getElementById(12).className="form-group has-error"
+          
+                senha1 = document.registro.senha.value;
+                senha2 = document.registro.senha2.value;
+                email = document.registro.email.value;
+                validou = true;
+                 
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+               
+               if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                    document.getElementById(555).style.display='inline';
+                    document.getElementById(10).className="form-group has-error"
+                    validou = false;
                 }
                 
-                if (erro == false){               
-                    document.forms["registro"].submit()
-                }    
+                if (senha1 == senha2){
+                }else{   
+                    document.getElementById(666).style.display='inline'
+                    document.getElementById(11).className="form-group has-error"
+                    document.getElementById(12).className="form-group has-error"      
+                    validou = false;
+                }
+                
+                return validou;
+                
             }
         </script>
         <!--login modal-->
@@ -37,7 +49,7 @@
                         <h1 class="text-center">Bem-vindo ao Talk About!</h1>
                     </div>
                     <div class="modal-body">
-                        <form class="form col-md-12 center-block" method="post" name="registro" action="controller/cadastro.php" >
+                        <form class="form col-md-12 center-block" method="post" name="registro" onsubmit=" return validarFormulario()" action="controller/cadastro.php" >
 
                             <div class="form-group">
                                 <input name="nome" required type="text" class="form-control input-lg" placeholder="Nome">
@@ -50,8 +62,10 @@
                                     <div id="validauser" style="float:right;"></div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="10" class="form-group">
                                 <input name ="email" required type="text" class="form-control input-lg" placeholder="Email">
+                                <span id="555" class="label label-danger" style='display: none'>Email inválido!</span>
+
                             </div>
                             <div id="11" class="form-group">
                                 <input name="senha" required type="password" class="form-control input-lg" placeholder="Senha">
@@ -62,7 +76,7 @@
 
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="validarFormulario()">Registrar</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" >Registrar</button>
                                 <br>
                                 <span class="pull-right"><a href="#">Login</a></span>
                             </div>
