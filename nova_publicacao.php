@@ -36,8 +36,8 @@
                             <input type="text" class="form-control" id="titulo" placeholder="Título da Publicação">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Descrição</label>
-                            <textarea id="teste" class="form-control" rows="3" placeholder="Descricao"></textarea>
+                            <label for="descricao">Descrição</label>
+                            <textarea id="descricao" class="form-control" rows="3" placeholder="Descricao"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Enviar foto</label>

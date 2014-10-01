@@ -28,9 +28,10 @@
                     document.getElementById(10).className="form-group has-error"
                     validou = false;
                 }
+               
                 
-                if (senha1 == senha2){
-                }else{   
+                if (senha1 !== senha2){
+                  
                     document.getElementById(666).style.display='inline'
                     document.getElementById(11).className="form-group has-error"
                     document.getElementById(12).className="form-group has-error"      
@@ -38,7 +39,6 @@
                 }
                 
                 return validou;
-                
             }
         </script>
         <!--login modal-->
