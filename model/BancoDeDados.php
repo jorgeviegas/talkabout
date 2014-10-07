@@ -12,9 +12,7 @@
  * @author Jorge
  */
 class BancoDeDados {
-
     private $Conexao;
-
     public function Conectar() {
        $retorno = mysql_connect('localhost', 'root', '');
        $retorno = mysql_select_db('talkabout');

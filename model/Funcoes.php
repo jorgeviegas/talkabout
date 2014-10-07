@@ -87,11 +87,11 @@ class Funcoes {
         include './model/BancoDeDados.php';
         include './model/Publicacao.php';
         include './model/Usuario.php';
-      
+
         $conexao = new BancoDeDados();
         $conexao->Conectar();
         $publicacoesDAO = new DAO('publicacoes p left join usuarios u on u.id = p.id_usuario');
-        $query = $publicacoesDAO->pesquisar(' p.*,u.nome, u.username ', ' p.id = '.$tcId);
+        $query = $publicacoesDAO->pesquisar(' p.*,u.nome, u.username ', ' p.id = ' . $tcId);
         $post = mysql_fetch_array($query);
         $publicacao = new Publicacao();
         $usuario = new Usuario($post['username']);
@@ -101,10 +101,19 @@ class Funcoes {
     }
 
     static public function getUsuariobyId($tcId) {
+        include '../model/Usuario.php';
         $usuariosDAO = new DAO('usuarios');
-        $query = $usuariosDAO->pesquisar('*', ' id = '+$tcId);
+        $query = $usuariosDAO->pesquisar('*', ' id = ' + $tcId);
         $usuario = mysql_fetch_assoc($query);
-        $user = new Usuario($userName, $senha, $email, $nome, $conquista, $amigos, $publicacoes);
+        $user = new Usuario($usuario['username']);
         return $user;
     }
+
+    static public function iniciarSessao($tcId) {
+        $usuario = Funcoes::getUsuariobyId($tcId);
+        $_SESSION['usuario'] =  serialize($usuario);
+        session_start();
+        
+    }
+
 }

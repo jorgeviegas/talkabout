@@ -6,36 +6,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <title>Talk About - Usuário</title>
-
         <!-- Bootstrap Core CSS -->
         <!-- Custom CSS -->
         <link href="css/blog-post.css" rel="stylesheet">
         <link href="css/bootstrap-combobox.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
-
     <body>
         <?php
+        session_start();
+        include 'model/Usuario.php';
         include ('view/include_navbar.html');
+        $usuario = unserialize($_SESSION['usuario']);
+        echo $usuario->getUsername();
         ?>
-
         <!-- Page Content -->
         <div class="container">
-
             <div class="row">
-
                 <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
-
                     <!-- Blog Search Well -->
                     <div class="well">
                         <img src ="view/imagens/jorge.jpg"></img>
                         <!-- /.input-group -->
                     </div>
-
-
                     <!-- Side Widget Well -->
                     <div class="well">
                         <h4><center>Conquistas</center></h4>
@@ -44,26 +39,21 @@
                     </div>
 
                 </div>
-
                 <!-- Blog Post Content Column -->
                 <div class="col-lg-8">
-
                     <!-- Blog Post -->
-
                     <!-- Title -->
                     <h1>Jorge Viegas (viegas)</h1>
                     <hr>
                     <h3>Esteio, RS</h3>
-                   
                     <BR>
                     <BR>
                     <h3>Informações de Contato</h3>
                     <HR>
                     <h4><b>Email:</b> jorgeviegas@live.com</h4>
                     <h4><b>Fone: </b>(00)1234458</h4>
-                                        <BR>
                     <BR>
-
+                    <BR>
                     <form role="form">
                         <div class="form-group">
                             <label for="teste">Envie uma mensagem para Jorge:</label>
@@ -73,13 +63,8 @@
                             <span class="glyphicon glyphicon-ok"></span> Enviar
                         </button>         
                     </form>
-
                     <hr>
-
                 </div>
-
-
-
             </div>
             <!-- /.row -->
             <hr>

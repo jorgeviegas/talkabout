@@ -48,16 +48,16 @@ body {
 
 /*editado*/
 a {
-  color:#000000;
+  color: #000044;
 }
 
 /* editado */
 p {
-color: #000000;
+color: #000044;
 }
 /*editado */
 h1 {
- color: #000000;
+ color: #000044;
 }
 
 .text-center {
@@ -140,7 +140,7 @@ h1 {
     border-top:0;
   }
   #sidebar .nav>li>a {
-    color: #ddd;
+    color: #000044;
   }
   #sidebar .nav>li>a>img {
     max-width: 14px;
@@ -148,7 +148,7 @@ h1 {
   #sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
     text-decoration: none;
     background: linear-gradient(#373737, #323232);
-    color: #fff;  
+    color: #000044;  
   }
   #sidebar .nav .caret {
     border-top-color: #fff;
