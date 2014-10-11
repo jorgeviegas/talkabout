@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Talk About - Nova Publicação</title>
+        <title>Talk About - Novo Grupo</title>
 
         <!-- Bootstrap Core CSS -->
         <!-- Custom CSS -->
@@ -29,12 +29,12 @@
                 <div class="col-lg-8">
                     <!-- Blog Post -->
                     <!-- Title -->
-                    <h1>Nova Publicação</h1>
+                    <h1>Novo Grupo</h1>
                     <hr>
                     <form role="form" method="post" enctype="multipart/form-data" action="controller/nova_publicacao.php">
                         <div class="form-group">
-                            <label for="titulo">Título da Publicação</label>
-                            <input type="text" class="form-control" id="titulo" placeholder="Título da Publicação">
+                            <label for="titulo">Nome do Grupo</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Nome do Grupo">
                         </div>
                         <div class="form-group">
                             <label for="descricao">Descrição</label>
@@ -45,17 +45,9 @@
                             <input type="file" name="arquivo" id="exampleInputFile">
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                         </div>
-                        <div class="form-group">
-                            <label for="isnt">Instituição</label>
-                            <?php
-                            echo Funcoes::montarCombo('instituicoes', 'nome', 0, 0, 0, 'instituicao', '10');
-                            ?>
-                        </div>
-                        <p class="help-block">Outra não listada? <a href="nova_instituicao.php">Clique aqui</a> para cadastrar</p>
-                            
                         <button type="submit" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
-                        </button>                    
+                        </button>         
                     </form>
                     <hr>
                 </div>

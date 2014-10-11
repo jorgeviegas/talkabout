@@ -15,11 +15,7 @@
     </head>
     <body>
         <?php
-        session_start();
-        include 'model/Usuario.php';
-        include ('view/include_navbar.html');
-        $usuario = unserialize($_SESSION['usuario']);
-        echo $usuario->getUsername();
+        $usuario = (include 'controller/usuario.php');
         ?>
         <!-- Page Content -->
         <div class="container">
@@ -43,14 +39,19 @@
                 <div class="col-lg-8">
                     <!-- Blog Post -->
                     <!-- Title -->
-                    <h1>Jorge Viegas (viegas)</h1>
+                    <?php
+                    echo '<h1>' . $usuario->getNome() . '</h1>';
+                    ?>
                     <hr>
                     <h3>Esteio, RS</h3>
                     <BR>
                     <BR>
                     <h3>Informações de Contato</h3>
                     <HR>
-                    <h4><b>Email:</b> jorgeviegas@live.com</h4>
+                     <?php
+                    echo' <h4><b>Email:</b>'. $usuario->getEmail() .'</h4>';
+                    ?>
+                    
                     <h4><b>Fone: </b>(00)1234458</h4>
                     <BR>
                     <BR>

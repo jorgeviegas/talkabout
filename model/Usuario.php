@@ -4,8 +4,8 @@ class Usuario {
 
     private $userName;
 
-    function __construct($userName) {
-        $this->setUserName($userName);
+    function __construct() {
+        
     }
 
     public function getUserName() {

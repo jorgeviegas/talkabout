@@ -16,14 +16,11 @@ class Funcoes {
     }
 
     static public function montarCombo($tcTabela, $tcCampo, $tnInativo, $tnDistinct, $tnTodas, $tcNome, $tcId) {
-
-        $conexao = new BancoDeDados();
-        $conexaotrue = $conexao::Conectar();
-        IF ($conexaotrue === false) {
-            echo '<script type="text/javascript">
-             alert("Verifique sua conexao com a internet!");
-         </script>';
-        }
+        include './model/BancoDeDados.php';
+        include './model/DAO.php';
+        
+        $llConexao = new BancoDeDados();
+        $llConexao->Conectar();
         $lcFiltro = ' 1=1 ';
         if ($tnDistinct === 1) {
             $lcQuery = ' distinct ' . $tcCampo;
@@ -38,12 +35,12 @@ class Funcoes {
         }
         $loDao = new DAO($tcTabela);
         $Result = $loDao->pesquisar($lcQuery, $lcFiltro);
-        $return = '<select name="' . $tcNome . '" id="' . $tcId . '">';
+        $return = '<select name="' . $tcNome . '" class = "input-large form-control" id="' . $tcId . '">';
         if ($tnTodas === 1) {
             $return.='<option value="00">Todos</option>';
         }
-        while ($registro = pg_fetch_assoc($Result)) {
-            $return.= '<option value="' . Funcoes::formatarHTML($registro[$tcCampoValue]) . '">' . Funcoes::formatarHTML($registro[$tcCampo]) . '</option>';
+        while ($registro = mysql_fetch_assoc($Result)) {
+            $return.= '<option value="' .$registro[$tcCampoValue] . '">' . $registro[$tcCampo] . '</option>';
         }
         $return.='</select>';
         return $return;
@@ -111,9 +108,8 @@ class Funcoes {
 
     static public function iniciarSessao($tcId) {
         $usuario = Funcoes::getUsuariobyId($tcId);
-        $_SESSION['usuario'] =  serialize($usuario);
+        $_SESSION['usuario'] = serialize($usuario);
         session_start();
-        
     }
 
 }
