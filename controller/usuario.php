@@ -9,7 +9,6 @@ include 'model/Usuario.php';
 include 'model/BancodeDados.php';
 include 'model/DAO.php';
 
-include ('view/include_navbar.html');
 if (isset($_GET['user']))
     $lcUsername = $_GET['user'];
 

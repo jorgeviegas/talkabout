@@ -3,7 +3,9 @@
 class Usuario {
 
     private $userName;
-
+    private $email;
+    private $nome;
+    
     function __construct() {
         
     }
@@ -32,10 +34,6 @@ class Usuario {
         return $this->amigos;
     }
 
-    public function getPublicacoes() {
-        return $this->publicacoes;
-    }
-
     public function setUserName($userName) {
         $this->userName = $userName;
     }
@@ -59,9 +57,4 @@ class Usuario {
     public function setAmigos($amigos) {
         $this->amigos = $amigos;
     }
-
-    public function setPublicacoes($publicacoes) {
-        $this->publicacoes = $publicacoes;
-    }
-
 }

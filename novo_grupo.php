@@ -31,14 +31,14 @@
                     <!-- Title -->
                     <h1>Novo Grupo</h1>
                     <hr>
-                    <form role="form" method="post" enctype="multipart/form-data" action="controller/nova_publicacao.php">
+                    <form role="form" method="post" enctype="multipart/form-data" action="controller/novo_grupo.php">
                         <div class="form-group">
                             <label for="titulo">Nome do Grupo</label>
-                            <input type="text" class="form-control" id="titulo" placeholder="Nome do Grupo">
+                            <input type="text" class="form-control" id="titulo" name="nome" placeholder="Nome do Grupo">
                         </div>
                         <div class="form-group">
                             <label for="descricao">Descrição</label>
-                            <textarea id="descricao" class="form-control" rows="3" placeholder="Descricao"></textarea>
+                            <textarea id="descricao" class="form-control" rows="3" name ="descricao"placeholder="Descricao"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Enviar foto</label>

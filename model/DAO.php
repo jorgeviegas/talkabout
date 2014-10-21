@@ -31,7 +31,6 @@ class DAO {
     
     public function inserir($tcCampos,$tcValores) {
         $lcQuery = 'insert into ' . $this->pcNomeTabela . ' (' . $tcCampos . ') values(' . $tcValores . ')';
-        echo $lcQuery;
         $result = mysql_query($lcQuery);
         return $result;
     }

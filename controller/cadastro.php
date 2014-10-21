@@ -26,8 +26,6 @@ $lcSenha = md5($lcSenha);
 
 $lcValores = '"'.$lcUsername.'","'.$lcSenha.'","'.$lcNome.'","'.$lcEmail.'",'.'0';
 
-echo $lcValores;
-
 $llConexao = new BancoDeDados();
 $llConexao->Conectar();
 
@@ -38,14 +36,4 @@ $your_email = $lcEmail;
 $email_subject = "Bem-vindo ao Talk About!";
 $email_content = "Bem-vindo ao Talk About, ".$lcNome. "!";
 
-echo $lcResutaldo;
-
-
-//if(@mail($your_email, $email_subject, $email_content)) {
-$lcMensagem = 'Email enviado com Sucesso!';
-//} else {
-//$lcMensagem = 'Erro no envio do Email!';
-//}
-
-echo $lcMensagem;
 ?>

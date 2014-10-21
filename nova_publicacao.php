@@ -11,9 +11,14 @@
 
         <!-- Bootstrap Core CSS -->
         <!-- Custom CSS -->
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
         <link href="css/blog-post.css" rel="stylesheet">
         <link href="css/bootstrap-combobox.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+        <script src="js/star-rating.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -52,7 +57,37 @@
                             ?>
                         </div>
                         <p class="help-block">Outra não listada? <a href="nova_instituicao.php">Clique aqui</a> para cadastrar</p>
-                            
+                        <br>
+                        <div class="form-group">
+                            <label for="avaliacao">Avaliação Geral da Instituição</label>
+                            <br>
+                            <input name="avaliacao" id="input-21c" value="0" type="number" class="rating" min=0 max=10 step=0.5 data-size="sm" data-stars="10">
+                            <br>
+                        </div>
+
+
+                        <br>
+                        <script>
+                            jQuery(document).ready(function () {
+                                $("#input-21f").rating({
+                                    starCaptions: function(val) {
+                                        if (val < 5) {
+                                            return val;
+                                        } else {
+                                            return 'high';
+                                        }
+                                    },
+                                    starCaptionClasses: function(val) {
+                                        if (val < 5) {
+                                            return 'label label-danger';
+                                        } else {
+                                            return 'label label-success';
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+
                         <button type="submit" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
                         </button>                    

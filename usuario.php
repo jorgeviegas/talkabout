@@ -7,14 +7,13 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Talk About - Usuário</title>
-        <!-- Bootstrap Core CSS -->
-        <!-- Custom CSS -->
         <link href="css/blog-post.css" rel="stylesheet">
         <link href="css/bootstrap-combobox.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <?php
+        include ('view/include_navbar.html');
         $usuario = (include 'controller/usuario.php');
         ?>
         <!-- Page Content -->
@@ -48,10 +47,10 @@
                     <BR>
                     <h3>Informações de Contato</h3>
                     <HR>
-                     <?php
-                    echo' <h4><b>Email:</b>'. $usuario->getEmail() .'</h4>';
+                    <?php
+                    echo' <h4><b>Email:</b>' . $usuario->getEmail() . '</h4>';
                     ?>
-                    
+
                     <h4><b>Fone: </b>(00)1234458</h4>
                     <BR>
                     <BR>

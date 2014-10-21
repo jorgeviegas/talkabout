@@ -9,9 +9,14 @@
         <title>Talk About - Nova Publicação</title>
         <!-- Bootstrap Core CSS -->
         <!-- Custom CSS -->
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
         <link href="css/blog-post.css" rel="stylesheet">
         <link href="css/bootstrap-combobox.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+        <script src="js/star-rating.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -27,14 +32,14 @@
                 var atpos = email.indexOf("@");
                 var dotpos = email.lastIndexOf(".");
                 if(email != ''){
-                if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-                    document.getElementById(555).style.display='inline';
-                    document.getElementById(10).className="form-group has-error"
-                    validou = false;
-                }    
+                    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                        document.getElementById(555).style.display='inline';
+                        document.getElementById(10).className="form-group has-error"
+                        validou = false;
+                    }    
+                }
+                return validou;
             }
-            return validou;
-        }
         </script>
         <!-- Page Content -->
         <div class="container">
@@ -75,9 +80,32 @@
                             <input type="file" name="arquivo" id="exampleInputFile">
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                         </div>
+
                         <button type="submit" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
-                        </button>                    
+                        </button>      
+
+
+                        <div class="media">
+                            <a class="pull-left" href="usuario.php?user=jorge">
+                                <img class="media-object" src="view/imagens/1412688151.jpg" alt="Jorge Viegas">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Jorge Viegas</h4>
+                                ASDIAUSHDUIAHS ESTA FERA
+
+                            </div>
+                        </div>
+                        <div class="media">
+                            <a class="pull-left" href="usuario.php?user=jorge">
+                                <img class="media-object" src="view/imagens/1412688151.jpg" alt="Jorge Viegas">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Henrique Martins</h4>
+                                Glbooooo
+                            </div>
+                        </div>
+                       <textarea class="form-control" id="descricao" name="descricao" placeholder="Comentario"></textarea>
                     </form>
                     <hr>
                 </div>

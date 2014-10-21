@@ -15,24 +15,31 @@
         <script>
             function validarFormulario(){
           
-                senha1 = document.registro.senha.value;
-                senha2 = document.registro.senha2.value;
-                email = document.registro.email.value;
-                validou = true;
+                var senha1 = document.registro.senha.value;
+                var n = senha1.length;
+                var senha2 = document.registro.senha2.value;
+                var email = document.registro.email.value;
+                var validou = true;
                  
                 var atpos = email.indexOf("@");
                 var dotpos = email.lastIndexOf(".");
                
-               if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+               if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=email.length) {
                     document.getElementById(555).style.display='inline';
                     document.getElementById(10).className="form-group has-error"
                     validou = false;
                 }
-               
+                
+               if (n < 5){
+                    document.getElementById(98).style.display='inline'
+                    document.getElementById(11).className="form-group has-error"
+                    document.getElementById(12).className="form-group has-error"      
+                    validou = false;
+                }
                 
                 if (senha1 !== senha2){
                   
-                    document.getElementById(666).style.display='inline'
+                    document.getElementById(99).style.display='inline'
                     document.getElementById(11).className="form-group has-error"
                     document.getElementById(12).className="form-group has-error"      
                     validou = false;
@@ -55,7 +62,7 @@
                                 <input name="nome" required type="text" class="form-control input-lg" placeholder="Nome">
                             </div>
                             <div class="form-group">
-                                <input name="username" required id="username" type="text" class="form-control input-lg" placeholder="Username">
+                                <input name="username" required id="username" onblur="validaUsername();" type="text" class="form-control input-lg" placeholder="Username">
                                 <br>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-success" onclick="validaUsername();">Validar Username</button>
@@ -72,8 +79,8 @@
                             </div>
                             <div id="12" class="form-group">
                                 <input type="password" required class="form-control input-lg" name="senha2" placeholder="Confirme a Senha">
-                                <span id="666" class="label label-danger" style='display: none'>Senhas não correspondem!</span>
-
+                                <span id="99" class="label label-danger" style='display: none'>Senhas não correspondem!</span>
+                                <span id="98" class="label label-danger" style='display: none'>A senha deve ter no mínimo 5 caracteres!</span>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary btn-lg btn-block" type="submit" >Registrar</button>
