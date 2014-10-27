@@ -16,11 +16,11 @@
 class DAO {
 
     private $pcNomeTabela;
-    
+
     function __construct($pcNomeTabela) {
         $this->pcNomeTabela = $pcNomeTabela;
     }
-    
+
     public function getPcNomeTabela() {
         return $this->pcNomeTabela;
     }
@@ -28,8 +28,8 @@ class DAO {
     public function setPcNomeTabela($pcNomeTabela) {
         $this->pcNomeTabela = $pcNomeTabela;
     }
-    
-    public function inserir($tcCampos,$tcValores) {
+
+    public function inserir($tcCampos, $tcValores) {
         $lcQuery = 'insert into ' . $this->pcNomeTabela . ' (' . $tcCampos . ') values(' . $tcValores . ')';
         $result = mysql_query($lcQuery);
         return $result;
@@ -46,5 +46,12 @@ class DAO {
         $result = mysql_query($lcQuery);
         return $result;
     }
+
+    public function atualizar($tcCampos, $tcValores, $tcFiltro) {
+        $lcQuery = 'update ' . $this->pcNomeTabela . ' set (' . $tcCampos . ')' . ' = ' . $tcValores . ' where ' . $tcFiltro;
+        $result = mysql_query($lcQuery);
+        return $result;
+    }
+
 }
 

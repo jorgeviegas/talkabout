@@ -16,7 +16,7 @@
     <body>
         <?php
         include ('view/include_navbar.html');
-        // $usuario = (include 'controller/usuario.php');
+        $instituicao = (include 'controller/instituicao.php');
         ?>
         <!-- Page Content -->
         <div class="container">
@@ -31,10 +31,12 @@
                     <!-- Blog Post -->
                     <!-- Title -->
                     <?php
-                    echo '<center><h1>Samsumg Eletronics</h1></center>';
+                    echo '<center><h1>' . $instituicao->getPcNome() . '</h1></center>';
                     ?>
                     <hr>
-                    <h3>Esteio, RS</h3>
+                    <?php
+                    echo '<h3>' .$instituicao->getPcDescricao().'</h3>';
+                    ?>
                     <BR>
                     <BR>
                     <h3>Informações de Contato</h3>
@@ -68,48 +70,6 @@
                     </div>
                 </div>
 
-                <table class="table-hover">
-                    <thead>
-                        <tr>
-                            <th>Row</th>
-                            <th>Bill</th>
-                            <th>Payasdasdament Date</th>
-                            <th>Payment Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="active">
-                            <td>1</td>
-                            <td>Credit Card</td>
-                            <td>04/07/2014</td>
-                            <td>Call in to confirm</td>
-                        </tr>
-                        <tr class="success">
-                            <td>2</td>
-                            <td>Water</td>
-                            <td>01/07/2014</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="info">
-                            <td>3</td>
-                            <td>Internet</td>
-                            <td>05/07/2014</td>
-                            <td>Change plan</td>
-                        </tr>
-                        <tr class="warning">
-                            <td>4</td>
-                            <td>Electricity</td>
-                            <td>03/07/2014</td>
-                            <td>Pending</td>
-                        </tr>
-                        <tr class="danger">
-                            <td>5</td>
-                            <td>Telephone</td>
-                            <td>06/07/2014</td>
-                            <td>Due</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
 
             <div class="progress">

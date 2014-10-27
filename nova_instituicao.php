@@ -105,9 +105,58 @@
                                 Glbooooo
                             </div>
                         </div>
-                       <textarea class="form-control" id="descricao" name="descricao" placeholder="Comentario"></textarea>
+                        <textarea class="form-control" id="descricao" name="descricao" placeholder="Comentario"></textarea>
                     </form>
                     <hr>
+                </div>
+                <!-- Blog Sidebar Widgets Column -->
+                <div class="col-md-4">
+
+                    <!-- Blog Categories Well -->
+                    <div class="well">
+                        <h4><center>Instituição</center></h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                
+                                teste
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                       <!-- Blog Categories Well -->
+                    <div class="well">
+                        <h4><center>Instituição</center></h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                
+                                teste
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->

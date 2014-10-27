@@ -23,39 +23,55 @@
                 <div class="col-md-4">
                     <!-- Blog Search Well -->
                     <div class="well">
-                        <img src ="view/imagens/jorge.jpg"></img>
+                        <?php
+                        echo '<img src ="' . $usuario->getPcImagem() . '"></img>'
+                        ?>
                         <!-- /.input-group -->
                     </div>
-                    <!-- Side Widget Well -->
-                    <div class="well">
-                        <h4><center>Conquistas</center></h4>
-                        <img src ="view/imagens/admin.jpg"></img>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                    </div>
-
                 </div>
                 <!-- Blog Post Content Column -->
                 <div class="col-lg-8">
                     <!-- Blog Post -->
                     <!-- Title -->
                     <?php
-                    echo '<h1>' . $usuario->getNome() . '</h1>';
+                    echo '<h1>' . $usuario->getPcNome() . '</h1>';
                     ?>
                     <hr>
-                    <h3>Esteio, RS</h3>
+                    <button type="submit" class="btn btn-info btn">
+                        <span class="glyphicon glyphicon-plus-sign"></span>  Adicionar Usuário
+                    </button>
+                    <button type="submit" class="btn btn-success btn">
+                        <span class="glyphicon glyphicon-ok-sign"></span>  Amigos
+                    </button>
+                    <button type="submit" class="btn btn-danger btn">
+                        <span class="glyphicon glyphicon-remove-sign"></span>  Remover Amizade
+                    </button>
+                    
+                    
+                     <button type="submit" class="btn btn-success btn">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                    </button>
+                    <button type="submit" class="btn btn-danger btn">
+                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                    </button>
+                    <hr>
+                    <h3><span class="glyphicon glyphicon-map-marker"></span> Esteio, RS</h3>
                     <BR>
                     <BR>
                     <h3>Informações de Contato</h3>
                     <HR>
                     <?php
-                    echo' <h4><b>Email:</b>' . $usuario->getEmail() . '</h4>';
+                    echo' <h4><span class="glyphicon glyphicon-envelope"></span><b> Email: </b>' . $usuario->getPcEmail() . '</h4>';
                     ?>
 
-                    <h4><b>Fone: </b>(00)1234458</h4>
+                    <h4>
+                    <span class="glyphicon glyphicon-earphone"></span>    <b>Fone: </b>(00)1234458
+                    </h4>
                     <BR>
                     <BR>
                     <form role="form">
                         <div class="form-group">
+                           <span class="glyphicon glyphicon-comment"></span> 
                             <label for="teste">Envie uma mensagem para Jorge:</label>
                             <textarea id="teste" class="form-control" rows="3" placeholder="Mensagem"></textarea>
                         </div>

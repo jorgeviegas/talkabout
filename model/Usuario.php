@@ -2,59 +2,40 @@
 
 class Usuario {
 
-    private $userName;
-    private $email;
-    private $nome;
+    private $pcUserName;
+    private $pcEmail;
+    private $pcNome;
+    private $pcImagem;
     
-    function __construct() {
-        
+    public function getPcUserName() {
+        return $this->pcUserName;
     }
 
-    public function getUserName() {
-        return $this->userName;
+    public function setPcUserName($pcUserName) {
+        $this->pcUserName = $pcUserName;
     }
 
-    public function getSenha() {
-        return $this->senha;
+    public function getPcEmail() {
+        return $this->pcEmail;
     }
 
-    public function getEmail() {
-        return $this->email;
+    public function setPcEmail($pcEmail) {
+        $this->pcEmail = $pcEmail;
     }
 
-    public function getNome() {
-        return $this->nome;
+    public function getPcNome() {
+        return $this->pcNome;
     }
 
-    public function getConquista() {
-        return $this->conquista;
+    public function setPcNome($pcNome) {
+        $this->pcNome = $pcNome;
     }
 
-    public function getAmigos() {
-        return $this->amigos;
+    public function getPcImagem() {
+        return $this->pcImagem;
     }
 
-    public function setUserName($userName) {
-        $this->userName = $userName;
-    }
-
-    public function setSenha($senha) {
-        $this->senha = $senha;
-    }
-
-    public function setEmail($email) {
-        $this->email = $email;
-    }
-
-    public function setNome($nome) {
-        $this->nome = $nome;
-    }
-
-    public function setConquista($conquista) {
-        $this->conquista = $conquista;
-    }
-
-    public function setAmigos($amigos) {
-        $this->amigos = $amigos;
+    public function setPcImagem($pcImagem) {
+        $this->pcImagem = $pcImagem;
     }
 }

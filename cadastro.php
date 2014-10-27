@@ -65,7 +65,7 @@
                                 <input name="username" required id="username" onblur="validaUsername();" type="text" class="form-control input-lg" placeholder="Username">
                                 <br>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-success" onclick="validaUsername();">Validar Username</button>
+                                    <button type="button" class="btn btn-info" onclick="validaUsername();">Validar Username</button>
                                     <div id="validauser" style="float:right;"></div>
                                 </div>
                             </div>
