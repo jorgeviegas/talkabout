@@ -15,7 +15,7 @@
     </head>
     <body>
         <?php
-        include ('view/include_navbar.html');
+        include ('view/include_navbar.php');
         $laNotificacoes = (include 'controller/notificacoes.php');
         ?>
         <!-- Page Content -->
@@ -27,13 +27,26 @@
         </div>
         <div class="container">
             <div class="row">
-                <?php
+                <?php 
                 foreach ($laNotificacoes as $linha) {
-                    echo '<div class="alert alert-info" role="alert">' . date("F j, Y, g:i a") . '<b> Nova! </b>' . $linha['descricao'] . '</div>';
+                    echo '<div class="alert alert-info" role="alert">
+                        <span class="glyphicon glyphicon-bell"></span> <b> Nova! </b>' 
+                        . date("F j, Y, g:i a") . $linha['descricao'] . '</div>';
                     
                     
                 }
+                       
+                       echo '<div class="alert alert-warning" role="alert">
+                        ' 
+                        . date("F j, Y, g:i a") . $linha['descricao'] . '</div>';
+                
+               echo '<div class="alert alert-success" role="alert">
+                       ' 
+                        . date("F j, Y, g:i a") . $linha['descricao'] . '</div>';
+               
+               
                 ?>
+             
             </div>
 
 

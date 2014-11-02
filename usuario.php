@@ -13,47 +13,54 @@
     </head>
     <body>
         <?php
-        include ('view/include_navbar.html');
+        include ('view/include_navbar.php');
         $usuario = (include 'controller/usuario.php');
+        
         ?>
-        <!-- Page Content -->
         <div class="container">
             <div class="row">
-                <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
-                    <!-- Blog Search Well -->
                     <div class="well">
                         <?php
                         echo '<img src ="' . $usuario->getPcImagem() . '"></img>'
                         ?>
-                        <!-- /.input-group -->
                     </div>
                 </div>
-                <!-- Blog Post Content Column -->
                 <div class="col-lg-8">
-                    <!-- Blog Post -->
-                    <!-- Title -->
                     <?php
                     echo '<h1>' . $usuario->getPcNome() . '</h1>';
                     ?>
                     <hr>
-                    <button type="submit" class="btn btn-info btn">
-                        <span class="glyphicon glyphicon-plus-sign"></span>  Adicionar Usuário
-                    </button>
-                    <button type="submit" class="btn btn-success btn">
-                        <span class="glyphicon glyphicon-ok-sign"></span>  Amigos
-                    </button>
-                    <button type="submit" class="btn btn-danger btn">
-                        <span class="glyphicon glyphicon-remove-sign"></span>  Remover Amizade
-                    </button>
+                    <?php
+                    switch ($usuario->getPnAmigo()) {
+                        case 0:
+                            echo '<button type="submit" class="btn btn-info btn">
+                                  <span class="glyphicon glyphicon-plus"></span>  Adicionar Usuário
+                                  </button>';
+                            break;
+                        case 1:
+                            echo ' <button type="submit" class="btn btn-warning btn">
+                        <span class="glyphicon glyphicon-share-alt"></span>  Solicitação de Amizade Enviada
+                    </button>';
+                            break;
+                        case 2:
+                            echo '<button type="submit" class="btn btn-success btn">
+                        <span class="glyphicon glyphicon-ok"></span>  Amigos
+                    </button>';
+                            break;
+                    }
+                    ?>
+
+                    <!--                 <button type="submit" class="btn btn-danger btn">
+                                            <span class="glyphicon glyphicon-remove"></span>  Remover Amizade
+                                        </button>
                     
-                    
-                     <button type="submit" class="btn btn-success btn">
-                        <span class="glyphicon glyphicon-thumbs-up"></span>
-                    </button>
-                    <button type="submit" class="btn btn-danger btn">
-                        <span class="glyphicon glyphicon-thumbs-down"></span>
-                    </button>
+                                        <button type="submit" class="btn btn-success btn">
+                                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                                        </button>
+                                        <button type="submit" class="btn btn-danger btn">
+                                            <span class="glyphicon glyphicon-thumbs-down"></span>
+                                        </button>-->
                     <hr>
                     <h3><span class="glyphicon glyphicon-map-marker"></span> Esteio, RS</h3>
                     <BR>
@@ -61,19 +68,21 @@
                     <h3>Informações de Contato</h3>
                     <HR>
                     <?php
-                    echo' <h4><span class="glyphicon glyphicon-envelope"></span><b> Email: </b>' . $usuario->getPcEmail() . '</h4>';
+                    echo' <h4>
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            <b> Email: </b>' . $usuario->getPcEmail() .
+                    '</h4>';
                     ?>
-
                     <h4>
-                    <span class="glyphicon glyphicon-earphone"></span>    <b>Fone: </b>(00)1234458
+                        <span class="glyphicon glyphicon-earphone"></span>    <b>Fone: </b>(00)1234458
                     </h4>
                     <BR>
                     <BR>
                     <form role="form">
                         <div class="form-group">
-                           <span class="glyphicon glyphicon-comment"></span> 
+                            <span class="glyphicon glyphicon-comment"></span> 
                             <label for="teste">Envie uma mensagem para Jorge:</label>
-                            <textarea id="teste" class="form-control" rows="3" placeholder="Mensagem"></textarea>
+                            <textarea id="mensagem" class="form-control" rows="3" placeholder="Mensagem"></textarea>
                         </div>
                         <button type="button" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
@@ -82,13 +91,12 @@
                     <hr>
                 </div>
             </div>
-            <!-- /.row -->
             <hr>
         </div>
-        <!-- /.container -->
-        <!-- jQuery Version 1.11.0 -->
+        <?php
+        include ('view/include_rodape.php');
+        ?>
         <script src="js/jquery-1.11.0.js"></script>
-        <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

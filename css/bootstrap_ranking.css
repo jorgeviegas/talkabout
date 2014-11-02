@@ -1407,7 +1407,7 @@ padding-top: 30px;
 padding-left: 130px;
 padding-right: 15px;
 height: 200px;
-background-color: #000000;	
+background-color: #000044;	
 color: #fff;
 }
 
@@ -4210,7 +4210,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #000044;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {

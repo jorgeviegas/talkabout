@@ -5,9 +5,6 @@
  * and open the template in the editor.
  */
 
-include 'model/BancodeDados.php';
-include 'model/DAO.php';
-
 $banco = new BancoDeDados();
 $banco->conectar();
 $notificacoesDAO = new DAO(' notificacoes ');

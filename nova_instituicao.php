@@ -21,7 +21,7 @@
 
     <body>
         <?php
-        include ('view/include_navbar.html');
+        include ('view/include_navbar.php');
         ?>
         <script>
             function validarFormulario(){
@@ -114,33 +114,28 @@
 
                     <!-- Blog Categories Well -->
                     <div class="well">
-                        <h4><center>Instituição</center></h4>
+                        <h4>
+                            <center>Instituição</center>
+                        </h4>
                         <div class="row">
-                            <div class="col-lg-6">
-                                
-                                teste
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
+                            <div class="col-lg-12">
+                                <ul>
+                                    <li>
+                                        Antes de realizar o registro de uma nova instituição,
+                                        certifique-se de que a mesma não está cadastrada no sistema.
+                                        Escreva corretamente o nome da instituição a ser cadastrada.
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    
-                       <!-- Blog Categories Well -->
+
+                    <!-- Blog Categories Well -->
                     <div class="well">
                         <h4><center>Instituição</center></h4>
                         <div class="row">
                             <div class="col-lg-6">
-                                
+
                                 teste
                             </div>
                             <div class="col-lg-6">

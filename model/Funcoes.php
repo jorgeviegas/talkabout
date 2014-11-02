@@ -18,7 +18,7 @@ class Funcoes {
     static public function montarCombo($tcTabela, $tcCampo, $tnInativo, $tnDistinct, $tnTodas, $tcNome, $tcId) {
         include './model/BancoDeDados.php';
         include './model/DAO.php';
-        
+
         $llConexao = new BancoDeDados();
         $llConexao->Conectar();
         $lcFiltro = ' 1=1 ';
@@ -40,7 +40,7 @@ class Funcoes {
             $return.='<option value="00">Todos</option>';
         }
         while ($registro = mysql_fetch_assoc($Result)) {
-            $return.= '<option value="' .$registro[$tcCampoValue] . '">' . $registro[$tcCampo] . '</option>';
+            $return.= '<option value="' . $registro[$tcCampoValue] . '">' . $registro[$tcCampo] . '</option>';
         }
         $return.='</select>';
         return $return;
@@ -81,9 +81,9 @@ class Funcoes {
     }
 
     static public function getPublicacaoById($tcId) {
-        include './model/BancoDeDados.php';
-        include './model/Publicacao.php';
-        include './model/Usuario.php';
+        include_once './model/BancoDeDados.php';
+        include_once './model/Publicacao.php';
+        include_once './model/Usuario.php';
 
         $conexao = new BancoDeDados();
         $conexao->Conectar();
@@ -97,19 +97,55 @@ class Funcoes {
         return $publicacao;
     }
 
-    static public function getUsuariobyId($tcId) {
-        include '../model/Usuario.php';
-        $usuariosDAO = new DAO('usuarios');
-        $query = $usuariosDAO->pesquisar('*', ' id = ' + $tcId);
-        $usuario = mysql_fetch_assoc($query);
-        $user = new Usuario($usuario['username']);
-        return $user;
+    static public function getUsuariobyId($tcId, $tcUsername) {
+        include_once './model/BancoDeDados.php';
+        include_once './model/DAO.php';
+        include_once './model/Usuario.php';
+
+        $usuariosDAO = new DAO('usuarios u left join fotos f on f.id = u.id_foto');
+        if (isset($tcUsername)) {
+            $consulta = $usuariosDAO->pesquisar(' u.*, f.caminho ', ' u.username = "' . $tcUsername . '"');
+        } else {
+            $consulta = $usuariosDAO->pesquisar(' u.*, f.caminho ', ' u.id = ' . $tcId);
+        };
+        if (mysql_affected_rows() > 0) {
+            $registro = mysql_fetch_assoc($consulta);
+
+            $usuario = new Usuario;
+            $usuario->setPcUserName($registro['username']);
+            $usuario->setPcNome($registro['nome']);
+            $usuario->setPcEmail($registro['email']);
+            $usuario->setPcImagem($registro['caminho']);
+            $image = new Imagem();
+            $image->load($usuario->getPcImagem());
+            $image->resize(315, 415);
+            $image->save($usuario->getPcImagem());
+
+            $amizadeDAO = new DAO('amigos');
+            $pesquisa = $amizadeDAO->pesquisar(' * ', ' ((id_act = ' . $registro['id'] . ') and (id_add = 1)) or ((id_act = 1 and id_add = ' . $registro['id'] . ' ))');
+            if (mysql_affected_rows() > 0) {
+                $linha = mysql_fetch_assoc($pesquisa);
+                if ($linha['ativa'] == 1) {
+                    $usuario->setPnAmigo(2);
+                } else {
+                    $usuario->setPnAmigo(1);
+                };
+            } else {
+                $usuario->setPnAmigo(0);
+            }
+            return $usuario;
+        } else {
+            return FALSE;
+        };
     }
 
     static public function iniciarSessao($tcId) {
-        $usuario = Funcoes::getUsuariobyId($tcId);
-        $_SESSION['usuario'] = serialize($usuario);
+        $usuario = Funcoes::getUsuariobyId($tcId, '');
         session_start();
+        $_SESSION['usuario'] = serialize($usuario);
+        $_SESSION['teste'] = 'lala';
+
     }
 
 }
+

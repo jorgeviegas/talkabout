@@ -12,10 +12,18 @@
  * @author Jorge
  */
 class BancoDeDados {
+
     private $Conexao;
+
     public function Conectar() {
-       $retorno = mysql_connect('localhost', 'root', '');
-       $retorno = mysql_select_db('talkabout');
-       return $retorno; 
+        if (1 == 1) {
+            $retorno = mysql_connect('localhost', 'root', '');
+            $retorno = mysql_select_db('talkabout');
+        } else {
+            $retorno = mysql_connect('localhost', 'turma4k', '1fsul2o14');
+            $retorno = mysql_select_db('talkabout');
+        };
+        return $retorno;
     }
+
 }

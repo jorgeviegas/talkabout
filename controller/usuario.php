@@ -5,26 +5,28 @@
  * and open the template in the editor.
  */
 
-include 'model/Usuario.php';
-include 'model/BancodeDados.php';
-include 'model/DAO.php';
+
+
+
+include_once 'model/Usuario.php';
+include_once 'model/Imagem.php';
+include_once 'model/Funcoes.php';
+
+session_start();
+
+//echo unserialize($_SESSION['usuario'])->getPcNome();
+
+
+echo $_SESSION['teste'];
 
 if (isset($_GET['user']))
     $lcUsername = $_GET['user'];
 
-$banco = new BancoDeDados();
-$banco->conectar();
-$usuariosDAO = new DAO('usuarios u left join fotos f on f.id = u.id_foto');
-$consulta = $usuariosDAO->pesquisar(' u.*, f.caminho ', ' u.username = "' . $lcUsername . '"');
-if (mysql_affected_rows() > 0) {
-    $registro = mysql_fetch_assoc($consulta);
-    $usuario = new Usuario;
-    $usuario->setPcUserName($registro['username']);
-    $usuario->setPcNome($registro['nome']);
-    $usuario->setPcEmail($registro['email']);
-    $usuario->setPcImagem($registro['caminho']);
+$usuario = Funcoes::getUsuariobyId(0, $lcUsername);
+
+if ($usuario == FALSE) {
+    header("Location: ./login.php");
 } else {
-    echo 'erro';
-};
-return $usuario;
+    return $usuario;
+}
 ?>

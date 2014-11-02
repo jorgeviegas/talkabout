@@ -20,8 +20,9 @@ $usuariosDAO = new DAO('usuarios');
 $retorno = $usuariosDAO->pesquisar(' * ', $lcFiltro);
 
 if (mysql_affected_rows() > 0) {
-    Funcoes::iniciarSessao(1);
-    header("Location: ../usuario.php"); 
+    $registro = mysql_fetch_array($retorno);
+    Funcoes::iniciarSessao($registro['id']);
+    header("Location: ../usuario.php?user=".$registro['username']); 
 } else {
     header("Location: ../login.php?erro=1");
 }
