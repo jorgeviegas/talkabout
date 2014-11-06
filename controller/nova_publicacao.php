@@ -1,10 +1,9 @@
 <?php
-include '../model/BancoDeDados.php';
-include '../model/DAO.php';
+include_once '../model/BancoDeDados.php';
+include_once '../model/DAO.php';
 
 $llConexao = new BancoDeDados();
 $llConexao->Conectar();
-
 
 $lcDescricao = '';
 $lcTitulo = '';

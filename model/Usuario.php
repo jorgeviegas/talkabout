@@ -7,7 +7,7 @@ class Usuario {
     private $pcNome;
     private $pcImagem;
     private $pnAmigo;
-
+    private $pcId;
     
     public function getPcUserName() {
         return $this->pcUserName;
@@ -48,6 +48,15 @@ class Usuario {
     public function setPnAmigo($pnAmigo) {
         $this->pnAmigo = $pnAmigo;
     }
+    
+    public function getPcId() {
+        return $this->pcId;
+    }
+
+    public function setPcId($pcId) {
+        $this->pcId = $pcId;
+    }
+
 
 
 }

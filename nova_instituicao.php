@@ -63,17 +63,17 @@
                             </select>  
                         </div>
                         <div class="form-group">
-                            <label for="titulo">Descrição</label>
-                            <textarea class="form-control" id="descricao" name="descricao" placeholder="Descrição"></textarea>
+                            <label for="descricao">Descrição</label>
+                            <textarea class="form-control" name="descricao" placeholder="Descrição"></textarea> 
                         </div>
                         <div id="10" class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control"  name="email" placeholder="Email">
+                            <input type="text" class="form-control" name="email" placeholder="Email">
                         </div>
                         <span id="555" class="label label-danger" style='display: none'>Email inválido!</span>  
                         <div class="form-group">
                             <label for="titulo">Telefone</label>
-                            <input type="text" class="form-control" name="fone" id="fone" placeholder="Telefone">
+                            <input type="text" class="form-control" name="fone" placeholder="Telefone">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Enviar foto</label>
@@ -105,7 +105,7 @@
                                 Glbooooo
                             </div>
                         </div>
-                        <textarea class="form-control" id="descricao" name="descricao" placeholder="Comentario"></textarea>
+                        <textarea class="form-control" id="comentario" name="comentario" placeholder="Comentario"></textarea>
                     </form>
                     <hr>
                 </div>

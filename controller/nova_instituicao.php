@@ -17,8 +17,8 @@ if (isset($_POST['nome']))
     $lcNome = $_POST['nome'];
 if (isset($_POST['descricao']))
     $lcDescricao = $_POST['descricao'];
-if (isset($_POST['telefone']))
-    $lcTelefone = $_POST['telefone'];
+if (isset($_POST['fone']))
+    $lcTelefone = $_POST['fone'];
 if (isset($_POST['email']))
     $lcEmail = $_POST['email'];
 if (isset($_POST['tipo']))
@@ -54,17 +54,19 @@ if ($_FILES['arquivo']['error'] == 0) {
         }
     }
 }
-
+echo 'descricao'.$lcDescricao;
 $instituicoesDAO = new DAO('instituicoes');
 $tcCampos = ' tipo, nome, descricao, fone, email ';
 $tcValores = $lcTipo . ', "' . $lcNome . '","' . $lcDescricao . '","' . $lcTelefone . '","' . $lcEmail . '"';
 if (isset($nome)) {
     $fotosDAO = new DAO('fotos');
-    $registro = $fotosDAO->pesquisar(' id ',' caminho = "'.$nome.'"');
+    $registro = $fotosDAO->pesquisar(' id ', ' caminho = "' . $nome . '"');
     $registra = mysql_fetch_array($registro);
     $lcIdFoto = $registra['id'];
     $tcCampos = ' tipo, id_foto, nome, descricao, fone, email ';
-    $tcValores = $lcTipo . ','.$lcIdFoto.', "' . $lcNome . '","' . $lcDescricao . '","' . $lcTelefone . '","' . $lcEmail . '"';
+    $tcValores = $lcTipo . ',' . $lcIdFoto . ', "' . $lcNome . '","' . $lcDescricao . '","' . $lcTelefone . '","' . $lcEmail . '"';
 };
+echo $tcCampos;
+echo $tcValores;
 $instituicoesDAO->inserir($tcCampos, $tcValores);
 ?>

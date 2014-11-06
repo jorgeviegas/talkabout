@@ -23,8 +23,8 @@
 
     <body>
         <?php
-        include 'model/Funcoes.php';
-        include ('view/include_navbar.html');
+        include_once 'model/Funcoes.php';
+        include ('view/include_navbar.php');
         ?>
 
         <!-- Page Content -->

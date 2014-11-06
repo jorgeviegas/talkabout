@@ -9,208 +9,166 @@
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap_ranking.css" rel="stylesheet">
     </head>
-	<body>
-	
-	        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <img src="view/imagens/reduzida.png" alt="Talk About"
-  style="float:left; width:130px; height: 50px">
-                </div>
-                <form class="navbar-form navbar-left" role="buscar"> 
-                    <div class="form-group"> 
-                        <input type="text" class="form-control" placeholder="Buscar"> 
-                    </div> <button type="submit" class="btn btn-default">Procurar</button> 
-                </form>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">Grupos</a>
-                        </li>
-                        <li>
-                            <a href="cadastro_publicacao.php">Publicar</a>
-                        </li>
+    <body>
 
-                        <li>
-                            <a href="#">Perfil</a>
-                        </li>
+        <?php
+        include ('view/include_navbar.php');
+        ?>
 
-                        <li>
-                            <a href="#"><b>Ranking</b></a>
-                        </li>
+        </br></br></br></br>
 
-                        <li>
-                            <a class = "active" href="sobre.html">Sobre o Talk About</a>
-                        </li>
 
-                        <li>
-                            <a href="#">Sair</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading" align = "center"><h2>Ranking Instituições Privadas</h2></div>
+            <div class="panel-body">
+                <p>	Neste ranking de instituições privadas, os consumidores poderão encontrar informações sobre as instituições que mais receberam críticas ou elogios,
+                    também poderão consultar quais foram as instituições que mais resolveram os problemas e, por último, ver a nota média que a instituição possui em nosso site.
+                    Isso é de grande importância, pois assim, vocês terão melhor controle e informações sobre as instituições.</p>
             </div>
-        </nav>
-	
-	</br></br></br></br>
-	
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading" align = "center"><h2>Ranking Instituições Privadas</h2></div>
-  <div class="panel-body">
-    <p>	Neste ranking de instituições privadas, os consumidores poderão encontrar informações sobre as instituições que mais receberam críticas ou elogios,
-	também poderão consultar quais foram as instituições que mais resolveram os problemas e, por último, ver a nota média que a instituição possui em nosso site.
-	Isso é de grande importância, pois assim, vocês terão melhor controle e informações sobre as instituições.</p>
-  </div>
+            <!-- Table -->
+            <table class="table">
 
-  <!-- Table -->
-  <table class="table">
-	
-<tr>
-<td align= "center">Posição</td>
-<td align ="center">Instituição</td>
-<td align ="center">Nº de Reclamações</td>
-<td align ="center">Nº de Elogios</td>
-<td align ="center">Nº de Soluções</td>
-<td align ="center">Média de Avaliação</td>
-</tr>
+                <tr>
+                    <td align= "center">Posição</td>
+                    <td align ="center">Instituição</td>
+                    <td align ="center">Nº de Reclamações</td>
+                    <td align ="center">Nº de Elogios</td>
+                    <td align ="center">Nº de Soluções</td>
+                    <td align ="center">Média de Avaliação</td>
+                </tr>
 
-<tr>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
 
-<tr>
-<td align ="center"><span class="badge">1º </span></td>
-<td align ="center">Livraria Saraiva</td>
-<td align ="center">7</td>
-<td align ="center">4</td>
-<td align ="center">6</td>
-<td align ="center">8,75</td>
-</tr>
+                <tr>
+                    <td align ="center"><span class="badge">1º </span></td>
+                    <td align ="center">Livraria Saraiva</td>
+                    <td align ="center">7</td>
+                    <td align ="center">4</td>
+                    <td align ="center">6</td>
+                    <td align ="center">8,75</td>
+                </tr>
 
-<tr>
-<td align = "center"><span class="badge">2º </span></td>
-<td align ="center">Walmart</td>
-<td align ="center">15</td>
-<td align ="center">0</td>
-<td align ="center">7</td>
-<td align ="center">4,75</td>
-</tr>
+                <tr>
+                    <td align = "center"><span class="badge">2º </span></td>
+                    <td align ="center">Walmart</td>
+                    <td align ="center">15</td>
+                    <td align ="center">0</td>
+                    <td align ="center">7</td>
+                    <td align ="center">4,75</td>
+                </tr>
 
-<tr>
-<td align = "center"><span class="badge">3º </span></td>
-<td align ="center">HP Eletronics</td>
-<td align ="center">5</td>
-<td align ="center">4</td>
-<td align ="center">4</td>
-<td align ="center">7,75</td>
-</tr>
+                <tr>
+                    <td align = "center"><span class="badge">3º </span></td>
+                    <td align ="center">HP Eletronics</td>
+                    <td align ="center">5</td>
+                    <td align ="center">4</td>
+                    <td align ="center">4</td>
+                    <td align ="center">7,75</td>
+                </tr>
 
-<tr>
-<td align = "center"> </td>
-<td align ="center">LG</td>
-<td align ="center">10</td>
-<td align ="center">3</td>
-<td align ="center">7</td>
-<td align ="center">7,5</td>
-</tr>
-  </table>
-  </br>
-  
-</div>
+                <tr>
+                    <td align = "center"> </td>
+                    <td align ="center">LG</td>
+                    <td align ="center">10</td>
+                    <td align ="center">3</td>
+                    <td align ="center">7</td>
+                    <td align ="center">7,5</td>
+                </tr>
+            </table>
+            </br>
+
+        </div>
 
 
-</br></br>
+        </br></br>
 
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading" align = "center"><h2>Ranking Instituições Públicas</h2></div>
-  <div class="panel-body">
-    <p>	Neste ranking de instituições públicas, os consumidores poderão encontrar informações sobre as instituições que mais receberam críticas ou elogios,
-	também poderão consultar quais foram as instituições que mais resolveram os problemas e, por último, ver a nota média que a instituição possui em nosso site.
-	Isso é de grande importância, pois assim, vocês terão melhor controle e informações sobre as instituições.</p>
-  </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading" align = "center"><h2>Ranking Instituições Públicas</h2></div>
+            <div class="panel-body">
+                <p>	Neste ranking de instituições públicas, os consumidores poderão encontrar informações sobre as instituições que mais receberam críticas ou elogios,
+                    também poderão consultar quais foram as instituições que mais resolveram os problemas e, por último, ver a nota média que a instituição possui em nosso site.
+                    Isso é de grande importância, pois assim, vocês terão melhor controle e informações sobre as instituições.</p>
+            </div>
 
-  <!-- Table -->
-  <table class="table">
-	
-<tr>
-<td align= "center">Posição</td>
-<td align ="center">Instituição</td>
-<td align ="center">Nº de Reclamações</td>
-<td align ="center">Nº de Elogios</td>
-<td align ="center">Nº de Soluções</td>
-<td align ="center">Média de Avaliação</td>
-</tr>
+            <!-- Table -->
+            <table class="table">
 
-<tr>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
+                <tr>
+                    <td align= "center">Posição</td>
+                    <td align ="center">Instituição</td>
+                    <td align ="center">Nº de Reclamações</td>
+                    <td align ="center">Nº de Elogios</td>
+                    <td align ="center">Nº de Soluções</td>
+                    <td align ="center">Média de Avaliação</td>
+                </tr>
 
-</tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
 
-<tr>
-<td align = "center"><span class="badge">1º </span></td>
-<td align ="center">Instituto Federal Sul-Riograndense - Campus Sapucaia</td>
-<td align ="center">3</td>
-<td align ="center">2</td>
-<td align ="center">3</td>
-<td align ="center">8,75</td>
-</tr>
+                </tr>
 
-<tr>
-<td align = "center"><span class="badge">2º </span></td>
-<td align ="center">Petrobrás</td>
-<td align ="center">15</td>
-<td align ="center">0</td>
-<td align ="center">7</td>
-<td align ="center">4,75</td>
-</tr>
+                <tr>
+                    <td align = "center"><span class="badge">1º </span></td>
+                    <td align ="center">Instituto Federal Sul-Riograndense - Campus Sapucaia</td>
+                    <td align ="center">3</td>
+                    <td align ="center">2</td>
+                    <td align ="center">3</td>
+                    <td align ="center">8,75</td>
+                </tr>
 
-<tr>
-<td align = "center"><span class="badge">3º </span></td>
-<td align ="center">Correios</td>
-<td align ="center">5</td>
-<td align ="center">4</td>
-<td align ="center">4</td>
-<td align ="center">7,75</td>
-</tr>
+                <tr>
+                    <td align = "center"><span class="badge">2º </span></td>
+                    <td align ="center">Petrobrás</td>
+                    <td align ="center">15</td>
+                    <td align ="center">0</td>
+                    <td align ="center">7</td>
+                    <td align ="center">4,75</td>
+                </tr>
 
-<tr>
-<td align = "center"> </td>
-<td align ="center">Caixa Econômica Federal</td>
-<td align ="center">10</td>
-<td align ="center">3</td>
-<td align ="center">7</td>
-<td align ="center">7,5</td>
-</tr>
-  </table>
+                <tr>
+                    <td align = "center"><span class="badge">3º </span></td>
+                    <td align ="center">Correios</td>
+                    <td align ="center">5</td>
+                    <td align ="center">4</td>
+                    <td align ="center">4</td>
+                    <td align ="center">7,75</td>
+                </tr>
 
-  
-</div>
-</br> </br>
-
-  
+                <tr>
+                    <td align = "center"> </td>
+                    <td align ="center">Caixa Econômica Federal</td>
+                    <td align ="center">10</td>
+                    <td align ="center">3</td>
+                    <td align ="center">7</td>
+                    <td align ="center">7,5</td>
+                </tr>
+            </table>
 
 
-</body>
+        </div>
+        </br> </br>
+
+        <?php
+        include ('view/include_rodape.php');
+        ?>
+
+
+    </body>
 
 </html>

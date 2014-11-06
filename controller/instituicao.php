@@ -5,9 +5,9 @@
  * and open the template in the editor.
  */
 
-include 'model/Instituicao.php';
-include 'model/BancodeDados.php';
-include 'model/DAO.php';
+include_once 'model/Instituicao.php';
+include_once 'model/BancodeDados.php';
+include_once 'model/DAO.php';
 
 if (isset($_GET['inst']))
     $lcInstituicao = $_GET['inst'];

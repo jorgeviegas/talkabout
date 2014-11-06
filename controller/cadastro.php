@@ -24,7 +24,7 @@ if (isset($_POST['senha2'])) $lcSenha2 = $_POST['senha2'];
 
 $lcSenha = md5($lcSenha);
 
-$lcValores = '"'.$lcUsername.'","'.$lcSenha.'","'.$lcNome.'","'.$lcEmail.'",'.'0';
+$lcValores = '"'.$lcUsername.'","'.$lcSenha.'","'.$lcNome.'","'.$lcEmail.'",'.'1';
 
 $llConexao = new BancoDeDados();
 $llConexao->Conectar();

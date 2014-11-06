@@ -16,8 +16,8 @@ class Funcoes {
     }
 
     static public function montarCombo($tcTabela, $tcCampo, $tnInativo, $tnDistinct, $tnTodas, $tcNome, $tcId) {
-        include './model/BancoDeDados.php';
-        include './model/DAO.php';
+        include_once './model/BancoDeDados.php';
+        include_once './model/DAO.php';
 
         $llConexao = new BancoDeDados();
         $llConexao->Conectar();
@@ -101,6 +101,7 @@ class Funcoes {
         include_once './model/BancoDeDados.php';
         include_once './model/DAO.php';
         include_once './model/Usuario.php';
+        include_once './model/Imagem.php';
 
         $usuariosDAO = new DAO('usuarios u left join fotos f on f.id = u.id_foto');
         if (isset($tcUsername)) {
@@ -116,13 +117,14 @@ class Funcoes {
             $usuario->setPcNome($registro['nome']);
             $usuario->setPcEmail($registro['email']);
             $usuario->setPcImagem($registro['caminho']);
+            $usuario->setPcId($registro['id']);
             $image = new Imagem();
             $image->load($usuario->getPcImagem());
             $image->resize(315, 415);
             $image->save($usuario->getPcImagem());
 
             $amizadeDAO = new DAO('amigos');
-            $pesquisa = $amizadeDAO->pesquisar(' * ', ' ((id_act = ' . $registro['id'] . ') and (id_add = 1)) or ((id_act = 1 and id_add = ' . $registro['id'] . ' ))');
+            $pesquisa = $amizadeDAO->pesquisar(' * ', ' ((id_act = ' . $registro['id'] . ') and (id_add = '.$_SESSION['id_usuario'].')) or ((id_act = '.$_SESSION['id_usuario'].' and id_add = ' . $registro['id'] . ' ))');
             if (mysql_affected_rows() > 0) {
                 $linha = mysql_fetch_assoc($pesquisa);
                 if ($linha['ativa'] == 1) {
@@ -138,14 +140,5 @@ class Funcoes {
             return FALSE;
         };
     }
-
-    static public function iniciarSessao($tcId) {
-        $usuario = Funcoes::getUsuariobyId($tcId, '');
-        session_start();
-        $_SESSION['usuario'] = serialize($usuario);
-        $_SESSION['teste'] = 'lala';
-
-    }
-
 }
 

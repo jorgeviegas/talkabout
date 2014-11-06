@@ -15,7 +15,6 @@
         <?php
         include ('view/include_navbar.php');
         $usuario = (include 'controller/usuario.php');
-        
         ?>
         <div class="container">
             <div class="row">
@@ -30,27 +29,34 @@
                     <?php
                     echo '<h1>' . $usuario->getPcNome() . '</h1>';
                     ?>
-                    <hr>
+                    
                     <?php
-                    switch ($usuario->getPnAmigo()) {
-                        case 0:
-                            echo '<button type="submit" class="btn btn-info btn">
+                    if ($_SESSION['id_usuario'] != $usuario->getPcId()) {
+                        echo '<hr>';
+                        switch ($usuario->getPnAmigo()) {
+                            case 0:
+                                echo '<form action="controller/control_amizade.php" method="post">';
+                                echo '<input type="hidden" name="id_usuario" value="' . $usuario->getPcId() . '">';
+                                echo '<input type="hidden" name="id_usu_logado" value="' . $_SESSION['id_usuario'] . '">';
+                                echo '<input type="hidden" name="tipo" value="1">
+                                <button type="submit" class="btn btn-info btn">
                                   <span class="glyphicon glyphicon-plus"></span>  Adicionar Usuário
-                                  </button>';
-                            break;
-                        case 1:
-                            echo ' <button type="submit" class="btn btn-warning btn">
+                                  </button></form>';
+                                break;
+                            case 1:
+                                echo '<input type="hidden" name="tipo" value="2"> 
+                                <button type="submit" class="btn btn-warning btn">
                         <span class="glyphicon glyphicon-share-alt"></span>  Solicitação de Amizade Enviada
                     </button>';
-                            break;
-                        case 2:
-                            echo '<button type="submit" class="btn btn-success btn">
+                                break;
+                            case 2:
+                                echo '<button type="submit" class="btn btn-success btn">
                         <span class="glyphicon glyphicon-ok"></span>  Amigos
                     </button>';
-                            break;
+                                break;
+                        }
                     }
                     ?>
-
                     <!--                 <button type="submit" class="btn btn-danger btn">
                                             <span class="glyphicon glyphicon-remove"></span>  Remover Amizade
                                         </button>

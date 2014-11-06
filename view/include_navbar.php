@@ -1,8 +1,12 @@
 <?php
-include 'model/BancodeDados.php';
-include 'model/DAO.php';
+include_once 'model/BancodeDados.php';
+include_once 'model/DAO.php';
 
-$lnIdUsuario = 1;
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$lnIdUsuario = $_SESSION['id_usuario'];
 $lnNumNot = 0;
 
 $banco = new BancoDeDados();
