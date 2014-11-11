@@ -29,7 +29,7 @@
                     <?php
                     echo '<h1>' . $usuario->getPcNome() . '</h1>';
                     ?>
-                    
+
                     <?php
                     if ($_SESSION['id_usuario'] != $usuario->getPcId()) {
                         echo '<hr>';

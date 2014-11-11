@@ -83,17 +83,33 @@ class Funcoes {
     static public function getPublicacaoById($tcId) {
         include_once './model/BancoDeDados.php';
         include_once './model/Publicacao.php';
+        include_once './model/DAO.php';
         include_once './model/Usuario.php';
 
         $conexao = new BancoDeDados();
         $conexao->Conectar();
-        $publicacoesDAO = new DAO('publicacoes p left join usuarios u on u.id = p.id_usuario');
-        $query = $publicacoesDAO->pesquisar(' p.*,u.nome, u.username ', ' p.id = ' . $tcId);
+        $publicacoesDAO = new DAO('publicacoes p left join publicacoes_tipos pt on pt.id = p.id_tipo left join instituicoes i on i.id = p.id_instituicao left join fotos f on f.id = p.id_foto left join usuarios u on u.id = p.id_usuario');
+        $query = $publicacoesDAO->pesquisar(' pt.descricao as desc_tipo, i.nome as nome_inst,f.caminho,p.*,u.nome, u.username,u.id as id_usu ', ' p.id = ' . $tcId);
         $post = mysql_fetch_array($query);
         $publicacao = new Publicacao();
-        $usuario = new Usuario($post['username']);
-        $publicacao->setDescricao($post['descricao']);
-        $publicacao->setUsuario($usuario);
+        $publicacao->setPcDescricao($post['descricao']);
+        $publicacao->setPcId($post['id']);
+        $publicacao->setPcImagem($post['caminho']);
+        $publicacao->setPnIdUusuario($post['id_usu']);
+        $publicacao->setPcNome($post['nome']);
+        $publicacao->setPcNomeInstituicao($post['nome_inst']);
+        $publicacao->setPcTitulo($post['titulo']);
+        $publicacao->setPcUsername($post['username']);
+        $publicacao->setPnIdInstituicao($post['id_instituicao']);
+        $publicacao->setPnIdUusuario($post['id_usuario']);
+        $publicacao->setPcTipo($post['desc_tipo']);
+        
+        $image = new Imagem();
+        $image->load($publicacao->getPcImagem());
+        $image->resize(800, 300);
+        $image->save($publicacao->getPcImagem());
+
+
         return $publicacao;
     }
 
@@ -124,7 +140,7 @@ class Funcoes {
             $image->save($usuario->getPcImagem());
 
             $amizadeDAO = new DAO('amigos');
-            $pesquisa = $amizadeDAO->pesquisar(' * ', ' ((id_act = ' . $registro['id'] . ') and (id_add = '.$_SESSION['id_usuario'].')) or ((id_act = '.$_SESSION['id_usuario'].' and id_add = ' . $registro['id'] . ' ))');
+            $pesquisa = $amizadeDAO->pesquisar(' * ', ' ((id_act = ' . $registro['id'] . ') and (id_add = ' . $_SESSION['id_usuario'] . ')) or ((id_act = ' . $_SESSION['id_usuario'] . ' and id_add = ' . $registro['id'] . ' ))');
             if (mysql_affected_rows() > 0) {
                 $linha = mysql_fetch_assoc($pesquisa);
                 if ($linha['ativa'] == 1) {
@@ -140,5 +156,6 @@ class Funcoes {
             return FALSE;
         };
     }
+
 }
 

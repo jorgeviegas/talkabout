@@ -38,6 +38,8 @@ class DAO {
 
     public function pesquisar($tcCampos, $tcFiltro) {
         $lcQuery = 'select ' . $tcCampos . ' from ' . $this->pcNomeTabela . ' where ' . $tcFiltro;
+        echo $lcQuery;
+
         $result = mysql_query($lcQuery);
         return $result;
     }
@@ -48,8 +50,9 @@ class DAO {
         return $result;
     }
 
-    public function atualizar($tcCampos, $tcValores, $tcFiltro) {
-        $lcQuery = 'update ' . $this->pcNomeTabela . ' set (' . $tcCampos . ')' . ' = ' . $tcValores . ' where ' . $tcFiltro;
+    public function atualizar($tcCamposValores, $tcFiltro) {
+        $lcQuery = 'update ' . $this->pcNomeTabela . ' set ' . $tcCamposValores . ' where ' . $tcFiltro;
+        echo $lcQuery;
         $result = mysql_query($lcQuery);
         return $result;
     }

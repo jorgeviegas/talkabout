@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Blog Post - Start Bootstrap Template</title>
+        <title>Talk About - Publicação</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,8 @@
 
     <body>
         <?php
-        include ('view/include_navbar.html');
+        include ('view/include_navbar.php');
+        $publicacao = (include 'controller/publicacao.php');
         ?>
         <!-- Page Content -->
         <div class="container">
@@ -41,12 +42,15 @@
                     <!-- Blog Post -->
 
                     <!-- Title -->
-                    <h1>Blog Post Title</h1>
-
+                    <?php
+                    echo '<h1>' . $publicacao->getPcTitulo() . '</h1>';
+                    ?>
                     <!-- Author -->
-                    <p class="lead">
-                        by <a href="#">Start Bootstrap</a>
-                    </p>
+                    <?php
+                    echo '<p class="lead">';
+                    echo 'por <a target ="_blank" href="usuario.php?user=' . $publicacao->getPcUsername() . '"> ' . $publicacao->getPcNome() . '</a>';
+                    echo '</p>';
+                    ?>
 
                     <hr>
 
@@ -56,17 +60,24 @@
                     <hr>
 
                     <!-- Preview Image -->
-                    <img class="img-responsive" src="view/imagens/1413026261.jpg" alt="">
-
+                    <?php
+                    echo '<img class="img-responsive" src="' . $publicacao->getPcImagem() . '" alt="">'
+                    ?>
                     <hr>
 
                     <!-- Post Content -->
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-                    <br>
+                    <p class="lead">
+                        <?php
+                        echo 'Instituição: <a target ="_blank" href="instituicao.php?inst=' . $publicacao->getpnIdInstituicao() . '">' . $publicacao->getPcNomeInstituicao();
+                        echo '</a><br>';
+                        echo 'Tipo: ' . $publicacao->getPcTipo() . '<img src="view/imagens/reclamacao.png"></img>'; 
+                        echo '</p>';
+                        echo '<p>';
+                        echo $publicacao->getPcDescricao();
+                        echo '</p>';
+                        ?>
+
+                        <br>
                     <h3>Comentários</h3>
                     <hr>
                     <div class="media">
@@ -77,7 +88,7 @@
                             <h4 class="media-heading">Jorge Viegas
                                 <small>August 25, 2014 at 9:30 PM</small>
                             </h4>
-                          Achei muito ofensivo.
+                            Achei muito ofensivo.
                         </div>
                     </div>
                     <hr>

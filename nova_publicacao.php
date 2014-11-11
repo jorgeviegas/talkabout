@@ -39,11 +39,11 @@
                     <form role="form" method="post" enctype="multipart/form-data" action="controller/nova_publicacao.php">
                         <div class="form-group">
                             <label for="titulo">Título da Publicação</label>
-                            <input type="text" class="form-control" id="titulo" placeholder="Título da Publicação">
+                            <input type="text" class="form-control" name="titulo" placeholder="Título da Publicação">
                         </div>
                         <div class="form-group">
                             <label for="descricao">Descrição</label>
-                            <textarea id="descricao" class="form-control" rows="3" placeholder="Descricao"></textarea>
+                            <textarea id="descricao" class="form-control" name="descricao" rows="3" placeholder="Descricao"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Enviar foto</label>
@@ -51,9 +51,15 @@
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                         </div>
                         <div class="form-group">
-                            <label for="isnt">Instituição</label>
+                            <label for="instituicao">Instituição</label>
                             <?php
                             echo Funcoes::montarCombo('instituicoes', 'nome', 0, 0, 0, 'instituicao', '10');
+                            ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <?php
+                            echo Funcoes::montarCombo('publicacoes_tipos', 'descricao', 0, 0, 0, 'tipo','99');
                             ?>
                         </div>
                         <p class="help-block">Outra não listada? <a href="nova_instituicao.php">Clique aqui</a> para cadastrar</p>

@@ -27,26 +27,41 @@
         </div>
         <div class="container">
             <div class="row">
-                <?php 
-                foreach ($laNotificacoes as $linha) {
-                    echo '<div class="alert alert-info" role="alert">
-                        <span class="glyphicon glyphicon-bell"></span> <b> Nova! </b>' 
-                        . date("F j, Y, g:i a") . $linha['descricao'] . '</div>';
-                    
-                    
+                <?php
+                if (empty($laNotificacoes)) {
+                    echo 'Nenhuma notificação!';
+                } else {
+                    foreach ($laNotificacoes as $linha) {
+                        switch ($linha['tipo']) {
+                            case 1:
+                                echo '<div class="alert alert-success" role="alert">';
+                                if ($linha['lida'] == 0) {
+                                    echo '<span class="glyphicon glyphicon-bell"></span> <b> Nova! </b>';
+                                }
+                                echo $linha['data_hora'] . ' - ' . $linha['descricao'] . '  
+                                    <div align="right" class="btn-group">
+                                    <button type="button" class="btn btn-success"> Aceitar </button>
+                                    <button type="button" class="btn btn-danger"> Recusar </button>
+                                    </div>
+                                    </div>';
+
+                                break;
+                            case 2:
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                break;
+                        }
+                    }
                 }
-                       
-                       echo '<div class="alert alert-warning" role="alert">
-                        ' 
-                        . date("F j, Y, g:i a") . $linha['descricao'] . '</div>';
-                
-               echo '<div class="alert alert-success" role="alert">
-                       ' 
-                        . date("F j, Y, g:i a") . $linha['descricao'] . '</div>';
-               
-               
+
+
+                //echo '<div class="alert alert-success" role="alert">. date("F j, Y, g:i a") . $linha['descricao'] . '</div>';
                 ?>
-             
+
             </div>
 
 

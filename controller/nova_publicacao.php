@@ -2,6 +2,10 @@
 include_once '../model/BancoDeDados.php';
 include_once '../model/DAO.php';
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 $llConexao = new BancoDeDados();
 $llConexao->Conectar();
 
@@ -13,10 +17,10 @@ if (isset($_POST['titulo']))
     $lcTitulo = $_POST['titulo'];
 if (isset($_POST['descricao']))
     $lcDescricao = $_POST['descricao'];
-if (isset($_POST['telefone']))
-    $lcTelefone = $_POST['telefone'];
-if (isset($_POST['email']))
-    $lcEmail = $_POST['email'];
+if (isset($_POST['avaliacao']))
+    $lnAvaliacao = $_POST['avaliacao'];
+if (isset($_POST['instituicao']))
+    $lnInstitucao = $_POST['instituicao'];
 if (isset($_POST['tipo']))
     $lcTipo = $_POST['tipo'];
 if ($_FILES['arquivo']['error'] == 0) {
@@ -52,26 +56,15 @@ if ($_FILES['arquivo']['error'] == 0) {
 }
 
 $publicacoesDAO = new DAO('publicacoes');
-$tcCampos = 'id_usuario, id_instituicao, id_tipo, id_grupo, descricao';
-$tcValores = '1, 1, 1, 0,"' . $lcDescricao . '"';
+$tcCampos = 'id_usuario, id_instituicao, id_tipo, titulo, descricao';
+$tcValores = $_SESSION['id_usuario'] . ',' . $lnInstitucao . ',' . $lcTipo . ',"' . $lcTitulo . '","' . $lcDescricao.'"';
 if (isset($nome)) {
     $fotosDAO = new DAO('fotos');
     $registro = $fotosDAO->pesquisar(' id ', ' caminho = "' . $nome . '"');
     $registra = mysql_fetch_array($registro);
     $lcIdFoto = $registra['id'];
-    $tcCampos = ' tipo, id_foto, nome, descricao, fone, email ';
-    $tcValores = $lcTipo . ',' . $lcIdFoto . ', "' . $lcNome . '","' . $lcDescricao . '","' . $lcTelefone . '","' . $lcEmail . '"';
+    $tcCampos = 'id_usuario, id_instituicao, id_tipo, id_foto, titulo, descricao';
+    $tcValores = $_SESSION['id_usuario'] . ',' . $lnInstitucao . ',' . $lcTipo . ',' . $lcIdFoto . ',"' . $lcTitulo . '","' . $lcDescricao .'"';
 };
-$instituicoesDAO->inserir($tcCampos, $tcValores);
-?>
-
-
-$publicacoesDAO = new DAO('publicacoes');
-$tcCampos = 'id_usuario, id_instituicao, id_tipo, id_foto, id_grupo, descricao';
-$tcValores = '1, 1, 1, 1, 1,"'.$lcDescricao.'"';
 $publicacoesDAO->inserir($tcCampos, $tcValores);
-
-$fotosDAO = new DAO('fotos');
-$nome = $_UP['pasta'] . $nome_final;
-echo $fotosDAO->inserir('caminho', '"' . $nome . '"');
 ?>

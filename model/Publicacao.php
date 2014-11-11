@@ -2,54 +2,120 @@
 
 class Publicacao {
 
-    private $descricao;
-    private $usuario;
-    private $votos_up;
-    private $votos_down;
-    private $instituicao;
+    private $pcDescricao;
+    private $pnIdUusuario;
+    private $pcNome;
+    private $pcUsername;
+    private $pcTitulo;
+    private $pnVotosUP;
+    private $pnVotosDOWN;
+    private $pnIdInstituicao;
+    private $pcNomeInstituicao;
+    private $pcId;
+    private $pcImagem;
+    private $pcTipo;
     
-   function __construct() {
+    
+   public function __construct() {
    }
+   
+   public function getPcTipo() {
+       return $this->pcTipo;
+   }
+
+   public function setPcTipo($pcTipo) {
+       $this->pcTipo = $pcTipo;
+   }
+
     
-    public function getDescricao() {
-        return $this->descricao;
-    }
+   public function getPcDescricao() {
+       return $this->pcDescricao;
+   }
 
-    public function setDescricao($descricao) {
-        $this->descricao = $descricao;
-    }
+   public function setPcDescricao($pcDescricao) {
+       $this->pcDescricao = $pcDescricao;
+   }
 
-    public function getUsuario() {
-        return $this->usuario;
-    }
+   public function getPnIdUusuario() {
+       return $this->pnIdUusuario;
+   }
 
-    public function setUsuario($usuario) {
-        $this->usuario = $usuario;
-    }
+   public function setPnIdUusuario($pnIdUusuario) {
+       $this->pnIdUusuario = $pnIdUusuario;
+   }
 
-    public function getVotos_up() {
-        return $this->votos_up;
-    }
+   public function getPcNome() {
+       return $this->pcNome;
+   }
 
-    public function setVotos_up($votos_up) {
-        $this->votos_up = $votos_up;
-    }
+   public function setPcNome($pcNome) {
+       $this->pcNome = $pcNome;
+   }
 
-    public function getVotos_down() {
-        return $this->votos_down;
-    }
+   public function getPcUsername() {
+       return $this->pcUsername;
+   }
 
-    public function setVotos_down($votos_down) {
-        $this->votos_down = $votos_down;
-    }
+   public function setPcUsername($pcUsername) {
+       $this->pcUsername = $pcUsername;
+   }
 
-    public function getInstituicao() {
-        return $this->instituicao;
-    }
+   public function getPcTitulo() {
+       return $this->pcTitulo;
+   }
 
-    public function setInstituicao($instituicao) {
-        $this->instituicao = $instituicao;
-    }
+   public function setPcTitulo($pcTitulo) {
+       $this->pcTitulo = $pcTitulo;
+   }
+
+   public function getPnVotosUP() {
+       return $this->pnVotosUP;
+   }
+
+   public function setPnVotosUP($pnVotosUP) {
+       $this->pnVotosUP = $pnVotosUP;
+   }
+
+   public function getPnVotosDOWN() {
+       return $this->pnVotosDOWN;
+   }
+
+   public function setPnVotosDOWN($pnVotosDOWN) {
+       $this->pnVotosDOWN = $pnVotosDOWN;
+   }
+
+   public function getPnIdInstituicao() {
+       return $this->pnIdInstituicao;
+   }
+
+   public function setPnIdInstituicao($pnIdInstituicao) {
+       $this->pnIdInstituicao = $pnIdInstituicao;
+   }
+
+   public function getPcNomeInstituicao() {
+       return $this->pcNomeInstituicao;
+   }
+
+   public function setPcNomeInstituicao($pcNomeInstituicao) {
+       $this->pcNomeInstituicao = $pcNomeInstituicao;
+   }
+
+   public function getPcId() {
+       return $this->pcId;
+   }
+
+   public function setPcId($pcId) {
+       $this->pcId = $pcId;
+   }
+
+   public function getPcImagem() {
+       return $this->pcImagem;
+   }
+
+   public function setPcImagem($pcImagem) {
+       $this->pcImagem = $pcImagem;
+   }
+
 
 
 }
