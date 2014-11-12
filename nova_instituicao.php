@@ -84,28 +84,6 @@
                         <button type="submit" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
                         </button>      
-
-
-                        <div class="media">
-                            <a class="pull-left" href="usuario.php?user=jorge">
-                                <img class="media-object" src="view/imagens/1412688151.jpg" alt="Jorge Viegas">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Jorge Viegas</h4>
-                                ASDIAUSHDUIAHS ESTA FERA
-
-                            </div>
-                        </div>
-                        <div class="media">
-                            <a class="pull-left" href="usuario.php?user=jorge">
-                                <img class="media-object" src="view/imagens/1412688151.jpg" alt="Jorge Viegas">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Henrique Martins</h4>
-                                Glbooooo
-                            </div>
-                        </div>
-                        <textarea class="form-control" id="comentario" name="comentario" placeholder="Comentario"></textarea>
                     </form>
                     <hr>
                 </div>

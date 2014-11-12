@@ -12,7 +12,6 @@ if (session_status() == PHP_SESSION_NONE) {
 if (isset($_GET['busca']))
     $lcBusca = $_GET['busca'];
 
-
 $banco = new BancoDeDados();
 $banco->conectar();
 $usuariosDAO = new DAO(' usuarios u left join fotos f on f.id = u.id_foto ');

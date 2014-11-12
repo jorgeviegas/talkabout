@@ -37,29 +37,26 @@ if ($lnNumNot == 0) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="view/imagens/reduzida.png" alt="Talk About"
-                 style="float:left; width:130px; height: 50px">
+            <a href="timeline.php"><img src="view/imagens/reduzida.png" alt="Talk About"
+                 style="float:left; width:130px; height: 50px"></a>
         </div>
-        <form class="navbar-form navbar-left" role="buscar"> 
+        <form class="navbar-form navbar-left" role="buscar" action="pesquisa.php" method="get"> 
             <div class="form-group"> 
-                <input type="text" class="form-control" placeholder="Buscar"> 
+                <input type="text" name="busca" class="form-control" placeholder="Buscar"> 
             </div> <button type="submit" class="btn btn-default">Procurar</button> 
         </form>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-
                 <li>
                     <a href="ranking.php">Ranking</a>
                 </li>
-
                 <li>
                     <a href="#">Interações</a>
                 </li>
                 <li>
                     <a href="nova_publicacao.php">Publicar</a>
                 </li>
-
                 <li>
                     <a href="usuario.php">Perfil</a>
                 </li>
@@ -71,18 +68,8 @@ if ($lnNumNot == 0) {
                 <li>
                     <a href="sobre.php">Sobre o Talk About</a>
                 </li>
-                <li class="dropdown pull-right">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                        <?php
-                        echo $_SESSION['username'];
-                        ?>
-                        <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
+                <li>
+                    <a href="logoff.php">Sair</a>
                 </li>            
             </ul>
         </div>

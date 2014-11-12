@@ -15,7 +15,9 @@
     <body>
         <?php
         include ('view/include_navbar.php');
-        $laNotificacoes = (include 'controller/pesquisa.php');
+        $laUsuarios = (include 'controller/pesquisa_usuarios.php');
+        $laInstituicoes = (include 'controller/pesquisa_instituicoes.php');
+        $laPublicacoes = (include 'controller/pesquisa_publicacoes.php');
         ?>
         <!-- Page Content -->
         <div class="jumbotron">
@@ -28,11 +30,11 @@
             <h1>Usuários</h1>
             <hr>
             <?php
-            if (empty($laNotificacoes)) {
-                echo '<h3>Nenhum resultado!</h3>';
+            if (empty($laUsuarios)) {
+                echo '<h4>Nenhum resultado!</h4>';
             } else {
-                foreach ($laNotificacoes as $linha) {
-                    echo $linha['username'];
+                foreach ($laUsuarios as $linha) {
+                    echo '<h4> '.$linha['nome'] . ' (<a target="_blank" href="usuario.php?user='.$linha['username'].'">'.$linha['username'].'</a>)';
                 }
             }
             ?>
@@ -56,11 +58,11 @@
             <h1>Instituições</h1>
             <hr>
             <?php
-            if (empty($laResultados)) {
+            if (empty($laInstituicoes)) {
                 echo '<h3>Nenhum resultado!</h3>';
             } else {
-                foreach ($laNotificacoes as $linha) {
-                    
+                foreach ($laInstituicoes as $linha) {
+                    echo '<h4>'.$linha['nome'] .'</h4>';
                 }
             }
             ?>

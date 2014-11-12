@@ -59,7 +59,7 @@
                         <div class="form-group">
                             <label for="tipo">Tipo</label>
                             <?php
-                            echo Funcoes::montarCombo('publicacoes_tipos', 'descricao', 0, 0, 0, 'tipo','99');
+                            echo Funcoes::montarCombo('publicacoes_tipos', 'descricao', 0, 0, 0, 'tipo', '99');
                             ?>
                         </div>
                         <p class="help-block">Outra não listada? <a href="nova_instituicao.php">Clique aqui</a> para cadastrar</p>
@@ -100,21 +100,10 @@
                     </form>
                     <hr>
                 </div>
-
             </div>
-            <!-- /.row -->
-
             <hr>
-
-
-
         </div>
-        <!-- /.container -->
-
-        <!-- jQuery Version 1.11.0 -->
         <script src="js/jquery-1.11.0.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
 
     </body>

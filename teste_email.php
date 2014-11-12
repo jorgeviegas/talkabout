@@ -13,8 +13,8 @@ $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->SMTPDebug  = 1;
 $mail->SMTP_PORT = "465";
-$mail->Host = "<smtp.gmail.com>";
-$mail->SMTPAuth = true; 
+$mail->Host = "smtp.gmail.com";
+//$mail->SMTPAuth = true; 
 $mail->Username = 'jorgematheusv@gmail.com'; // Usuário do servidor SMTP
 $mail->Password = '$pw013ot'; // Senha do servidor SMTP
 $mail->IsHTML(true);
@@ -31,5 +31,7 @@ $mail->WordWrap = 50;
 //$mail->AddAttachment($arquivo);
 if (!$mail->Send()) {
     echo 'Erro de envio:'. $mail->ErrorInfo;
+}else{
+    echo 'Enviei!';
 }
 ?>

@@ -105,36 +105,21 @@
                         </div>
                     </div>
                     <br>
-
-                    <!-- Comments Form -->
                     <div class="well">
                         <h4>Escreva um Comentário:</h4>
-                        <form role="form">
+                        <form role="form" action="controller/comentario.php">
                             <div class="form-group">
                                 <textarea name="comentario" class="form-control" rows="3"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-
                     <hr>
-
                 </div>
-
-
             </div>
-            <!-- /.row -->
-
             <hr>
         </div>
-        <!-- /.container -->
-
-        <!-- jQuery Version 1.11.0 -->
         <script src="js/jquery-1.11.0.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-
     </body>
-
 </html>

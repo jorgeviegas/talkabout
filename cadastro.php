@@ -85,7 +85,7 @@
                             <div class="form-group">
                                 <button class="btn btn-primary btn-lg btn-block" type="submit" >Registrar</button>
                                 <br>
-                                <span class="pull-right"><a href="#">Login</a></span>
+                                <span class="pull-right"><a href="login.php">Login</a></span>
                             </div>
                         </form>
                     </div>

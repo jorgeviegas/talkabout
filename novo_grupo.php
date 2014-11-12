@@ -18,8 +18,7 @@
 
     <body>
         <?php
-        include 'model/Funcoes.php';
-        include ('view/include_navbar.html');
+        include ('view/include_navbar.php');
         ?>
 
         <!-- Page Content -->
@@ -45,29 +44,16 @@
                             <input type="file" name="arquivo" id="exampleInputFile">
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                         </div>
-                        <button type="submit" class="btn btn-default btn-lg">
+                        <button type="submit" class="btn btn-info btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
                         </button>         
                     </form>
                     <hr>
                 </div>
-
             </div>
-            <!-- /.row -->
-
             <hr>
-
-
-
         </div>
-        <!-- /.container -->
-
-        <!-- jQuery Version 1.11.0 -->
         <script src="js/jquery-1.11.0.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-
     </body>
-
 </html>

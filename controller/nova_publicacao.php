@@ -66,5 +66,9 @@ if (isset($nome)) {
     $tcCampos = 'id_usuario, id_instituicao, id_tipo, id_foto, titulo, descricao';
     $tcValores = $_SESSION['id_usuario'] . ',' . $lnInstitucao . ',' . $lcTipo . ',' . $lcIdFoto . ',"' . $lcTitulo . '","' . $lcDescricao .'"';
 };
+
 $publicacoesDAO->inserir($tcCampos, $tcValores);
+$lcId = mysql_insert_id();
+header("Location: ../publicacao.php?publi=". $lcId);
+
 ?>

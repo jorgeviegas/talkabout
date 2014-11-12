@@ -32,8 +32,6 @@ $llConexao->Conectar();
 $usuariosDAO = new DAO('usuarios');
 $lcResutaldo = $usuariosDAO->inserir('username,senha,nome,email,id_foto', $lcValores);
 
-$your_email = $lcEmail;
-$email_subject = "Bem-vindo ao Talk About!";
-$email_content = "Bem-vindo ao Talk About, ".$lcNome. "!";
+header("Location: ../login.php");
 
 ?>

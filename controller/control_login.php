@@ -25,6 +25,8 @@ if (mysql_num_rows($retorno) > 0) {
     session_start();
     $_SESSION['id_usuario'] = $registro['id'];
     $_SESSION['username'] = $registro['username'];
+    header("Location: ../timeline.php");
+    
 } else {
     header("Location: ../login.php?erro=1");
 }

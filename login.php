@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary btn-lg btn-block" type="submit" name="send">Entrar</button>
-                                <span class="pull-right"><a href="cadastro.php">Cadastre-se</a></span><span><a href="#">Ajuda</a></span>
+                                <span class="pull-right"><a href="cadastro.php">Cadastre-se</a></span>
                             </div>
                         </form>
                     </div>
