@@ -39,12 +39,14 @@
                                     echo '<span class="glyphicon glyphicon-bell"></span> <b> Nova! </b>';
                                 }
                                 echo $linha['data_hora'] . ' - ' . $linha['descricao'] . '  
-                                    <div align="right" class="btn-group">
-                                    <button type="button" class="btn btn-success"> Aceitar </button>
-                                    <button type="button" class="btn btn-danger"> Recusar </button>
-                                    </div>
-                                    </div>';
-
+                                  
+                                <form role = "form" method="post" action = "logado.php">
+                                <div class = "form-group">
+                                <input type="hidden" value="'.$linha['id_usuario'] .'"></input>
+                                <button type = "submit" name="botao" value = "2" class = "btn btn-success"> Aceitar </button>
+                                <button type = "submit" name="botao" value = "1" class = "btn btn-danger"> Recusar </button>
+                                </div>
+                                </form>';
                                 break;
                             case 2:
                                 break;

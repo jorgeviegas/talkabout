@@ -8,22 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <title>Talk About - Publicação</title>
-
-        <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
         <link href="css/blog-post.css" rel="stylesheet">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
     </head>
 
     <body>
@@ -31,21 +18,12 @@
         include ('view/include_navbar.php');
         $publicacao = (include 'controller/publicacao.php');
         ?>
-        <!-- Page Content -->
         <div class="container">
-
             <div class="row">
-
-                <!-- Blog Post Content Column -->
                 <div class="col-lg-8">
-
-                    <!-- Blog Post -->
-
-                    <!-- Title -->
                     <?php
                     echo '<h1>' . $publicacao->getPcTitulo() . '</h1>';
                     ?>
-                    <!-- Author -->
                     <?php
                     echo '<p class="lead">';
                     echo 'por <a target ="_blank" href="usuario.php?user=' . $publicacao->getPcUsername() . '"> ' . $publicacao->getPcNome() . '</a>';
@@ -58,19 +36,15 @@
                     <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
 
                     <hr>
-
-                    <!-- Preview Image -->
                     <?php
                     echo '<img class="img-responsive" src="' . $publicacao->getPcImagem() . '" alt="">'
                     ?>
                     <hr>
-
-                    <!-- Post Content -->
                     <p class="lead">
                         <?php
                         echo 'Instituição: <a target ="_blank" href="instituicao.php?inst=' . $publicacao->getpnIdInstituicao() . '">' . $publicacao->getPcNomeInstituicao();
                         echo '</a><br>';
-                        echo 'Tipo: ' . $publicacao->getPcTipo() . '<img src="view/imagens/reclamacao.png"></img>'; 
+                        echo 'Tipo: ' . $publicacao->getPcTipo() . '<img src="view/imagens/reclamacao.png"></img>';
                         echo '</p>';
                         echo '<p>';
                         echo $publicacao->getPcDescricao();
@@ -80,18 +54,22 @@
                         <br>
                     <h3>Comentários</h3>
                     <hr>
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="view/imagens/1413252617.jpg">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Jorge Viegas
-                                <small>August 25, 2014 at 9:30 PM</small>
-                            </h4>
-                            Achei muito ofensivo.
-                        </div>
-                    </div>
-                    <hr>
+
+                    <?php
+                    foreach ($publicacao->getPcComentarios() as $coment) {
+                        echo '<div class="media">';
+                        echo '<a class="pull-left" href="">';
+                        echo '<img class="media-object" src="view/imagens/1413252617.jpg">';
+                        echo '</a>';
+                        echo '<div class="media-body">';
+                        echo '<h4 class="media-heading">' . $coment['nome'];
+                        echo '<small>August 25, 2014 at 9:30 PM</small></h4>';
+                        echo $coment['descricao'];
+                        echo '</div></div><hr>';
+                    };
+                    ?>
+
+
                     <div class="media">
                         <a class="pull-left" href="#">
                             <img class="media-object" src="view/imagens/1412688151.jpg" alt="">
@@ -107,9 +85,12 @@
                     <br>
                     <div class="well">
                         <h4>Escreva um Comentário:</h4>
-                        <form role="form" action="controller/comentario.php">
+                        <form role="form" method="post"action="controller/comentario.php">
                             <div class="form-group">
-                                <textarea name="comentario" class="form-control" rows="3"></textarea>
+                                <textarea name="descricao" class="form-control" rows="3"></textarea>
+                                <?php
+                                echo '<input type="hidden" name="id_publicacao" value="'.$publicacao->getPcId() . '"> </input>'
+                                ?>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>

@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_erros', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_erros', 1);
+//error_reporting(E_ALL);
 
 include_once 'model/BancoDeDados.php';
 include_once 'model/DAO.php';
@@ -29,7 +29,6 @@ if ($lnNumNot == 0) {
 <link rel="icon" type="image/ico" href="../favicon.ico">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -38,21 +37,20 @@ if ($lnNumNot == 0) {
                 <span class="icon-bar"></span>
             </button>
             <a href="timeline.php"><img src="view/imagens/reduzida.png" alt="Talk About"
-                 style="float:left; width:130px; height: 50px"></a>
+                                        style="float:left; width:130px; height: 50px"></a>
         </div>
         <form class="navbar-form navbar-left" role="buscar" action="pesquisa.php" method="get"> 
             <div class="form-group"> 
                 <input type="text" name="busca" class="form-control" placeholder="Buscar"> 
             </div> <button type="submit" class="btn btn-default">Procurar</button> 
         </form>
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
                     <a href="ranking.php">Ranking</a>
                 </li>
                 <li>
-                    <a href="#">Interações</a>
+                    <a href="interacoes.php">Interações</a>
                 </li>
                 <li>
                     <a href="nova_publicacao.php">Publicar</a>
@@ -66,7 +64,7 @@ if ($lnNumNot == 0) {
                     ?>
                 </li>
                 <li>
-                    <a href="sobre.php">Sobre o Talk About</a>
+                    <a href="sobre.php">Sobre</a>
                 </li>
                 <li>
                     <a href="logoff.php">Sair</a>

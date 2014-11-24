@@ -103,13 +103,22 @@ class Funcoes {
         $publicacao->setPnIdInstituicao($post['id_instituicao']);
         $publicacao->setPnIdUusuario($post['id_usuario']);
         $publicacao->setPcTipo($post['desc_tipo']);
-        
+
         $image = new Imagem();
         $image->load($publicacao->getPcImagem());
         $image->resize(800, 300);
         $image->save($publicacao->getPcImagem());
 
+        $comentariosDAO = new DAO(' comentarios c left join usuarios u on u.id = c.id_usuario ');
+        $consulta = $comentariosDAO->pesquisar(' u.nome, u.username, c.descricao ', ' c.id_publicacao = ' . $post['id']);
 
+        $array_comentarios = array();
+
+        while ($linha = mysql_fetch_assoc($consulta)) {
+            $array_comentarios[] = $linha;
+        }
+        
+        $publicacao->setPcComentarios($array_comentarios);
         return $publicacao;
     }
 

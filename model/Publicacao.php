@@ -14,9 +14,17 @@ class Publicacao {
     private $pcId;
     private $pcImagem;
     private $pcTipo;
+    private $pcComentarios;
 
     public function __construct() {
         
+    }
+    public function getPcComentarios() {
+        return $this->pcComentarios;
+    }
+
+    public function setPcComentarios($pcComentarios) {
+        $this->pcComentarios = $pcComentarios;
     }
 
     public function getPcTipo() {
