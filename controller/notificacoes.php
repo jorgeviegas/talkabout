@@ -6,8 +6,9 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $banco = new BancoDeDados();
 $banco->conectar();
+
 $notificacoesDAO = new DAO(' notificacoes ');
-$consulta = $notificacoesDAO->pesquisar(' descricao, tipo, lida, id_usuario ', ' id_usuario = ' . $_SESSION['id_usuario']);
+$consulta = $notificacoesDAO->pesquisar(' id, descricao, tipo, lida, id_usuario,id_usuario_ref', ' id_usuario = ' . $_SESSION['id_usuario']);
 
 $array_notificacoes = array();
 

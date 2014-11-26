@@ -1,7 +1,7 @@
 <?php
 
-ini_set('display_errors',1);
-ini_set('display_startup_erros',1);
+ini_set('display_errors', 1);
+ini_set('display_startup_erros', 1);
 error_reporting(E_ALL);
 
 include_once '../model/BancoDeDados.php';
@@ -26,9 +26,10 @@ $registro = mysql_fetch_assoc($consulta);
 $lcNomeUsu = $registro['nome'];
 $lcUsernameUsu = $registro['username'];
 
-//$lcMensagem = 'O Usuario ' . $lcNomeUsu . ' (<a href="usuario?user='.$lcUsernameUsu.'">' . $lcUsernameUsu . '</a>) enviou uma solicitação de amizade!';
-$lcMensagem = 'O Usuario ' . $lcNomeUsu . ' ('.$lcUsernameUsu.') enviou uma solicitacao de amizade!';
+$lcMensagem = 'O Usuario ' . $lcNomeUsu . ' (' . $lcUsernameUsu . ') enviou uma solicitacao de amizade!';
 
 $notificacoesDAO = new DAO('notificacoes');
-$notificacoesDAO->inserir('id_usuario, descricao, tipo', $lcIdUsuario . ',' . '"' .$lcMensagem .'",1');
+$notificacoesDAO->inserir('id_usuario, descricao, tipo, id_usuario_ref', $lcIdUsuario . ',' . '"' . $lcMensagem . '",1,'.$lcIdUsuLogado);
+
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

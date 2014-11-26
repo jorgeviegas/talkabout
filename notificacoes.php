@@ -38,11 +38,12 @@
                                 if ($linha['lida'] == 0) {
                                     echo '<span class="glyphicon glyphicon-bell"></span> <b> Nova! </b>';
                                 }
-                                echo $linha['data_hora'] . ' - ' . $linha['descricao'] . '  
+                                echo $linha['descricao'] . '  
                                   
-                                <form role = "form" method="post" action = "logado.php">
+                                <form role = "form" method="post" action = "controller/adicionar_amigo.php">
                                 <div class = "form-group">
-                                <input type="hidden" value="'.$linha['id_usuario'] .'"></input>
+                                <input type="hidden" name="id_add" value="' . $linha['id_usuario_ref'] . '"></input>
+                                <input type="hidden" name="id_noti" value="' . $linha['id'] . '"></input>
                                 <button type = "submit" name="botao" value = "2" class = "btn btn-success"> Aceitar </button>
                                 <button type = "submit" name="botao" value = "1" class = "btn btn-danger"> Recusar </button>
                                 </div>

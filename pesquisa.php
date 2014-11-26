@@ -13,6 +13,9 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <br>
+        <br>
+
         <?php
         include ('view/include_navbar.php');
         $laUsuarios = (include 'controller/pesquisa_usuarios.php');
@@ -34,7 +37,7 @@
                 echo '<h4>Nenhum resultado!</h4>';
             } else {
                 foreach ($laUsuarios as $linha) {
-                    echo '<h4> '.$linha['nome'] . ' (<a target="_blank" href="usuario.php?user='.$linha['username'].'">'.$linha['username'].'</a>)';
+                    echo '<h4> ' . $linha['nome'] . ' (<a target="_blank" href="usuario.php?user=' . $linha['username'] . '">' . $linha['username'] . '</a>)';
                 }
             }
             ?>
@@ -44,11 +47,11 @@
             <h1>Publicações</h1>
             <hr>
             <?php
-            if (empty($laResultados)) {
+            if (empty($laPublicacoes)) {
                 echo '<h3>Nenhum resultado!</h3>';
             } else {
-                foreach ($laNotificacoes as $linha) {
-                    
+                foreach ($laPublicacoes as $linha) {
+                    echo '<h4><a href="publicacao.php?publi=' . $linha['id'] . '">' . $linha['titulo'] . '</a></h4>';
                 }
             }
             ?>
@@ -62,20 +65,15 @@
                 echo '<h3>Nenhum resultado!</h3>';
             } else {
                 foreach ($laInstituicoes as $linha) {
-                    echo '<h4>'.$linha['nome'] .'</h4>';
+                    echo '<h4><a href="instituicao.php?inst=' . $linha['id_insti'] . '">' . $linha['nome'] . '</a></h4>';
                 }
             }
             ?>
-
         </div>
-
-
         <hr>
-    </div>
-    <!-- /.container -->
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-</body>
+        <?php
+        include ('view/include_rodape.php');
+        ?>    <script src="js/jquery-1.11.0.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
 </html>

@@ -1,10 +1,5 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -15,7 +10,7 @@ if (isset($_GET['busca']))
 $banco = new BancoDeDados();
 $banco->conectar();
 $publicacoesDAO = new DAO(' publicacoes ');
-$consultaPublicacoes = $publicacoesDAO->pesquisar('id, titulo, descricao ', ' (titulo like "%' . $lcBusca . '%" or descricao like "%' . $lcBusca . '%")');
+$consultaPublicacoes = $publicacoesDAO->pesquisar('id, titulo, descricao ', ' titulo like "%' . $lcBusca . '%" or descricao like "%' . $lcBusca . '%"');
 
 $array = array();
 
