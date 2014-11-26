@@ -11,6 +11,11 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <?php
         include ('view/include_navbar.php');
         $laGrupos = (include 'controller/pesquisa_grupos.php');

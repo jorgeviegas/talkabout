@@ -117,7 +117,7 @@ class Funcoes {
         while ($linha = mysql_fetch_assoc($consulta)) {
             $array_comentarios[] = $linha;
         }
-        
+
         $publicacao->setPcComentarios($array_comentarios);
         return $publicacao;
     }
@@ -129,7 +129,7 @@ class Funcoes {
         include_once './model/Imagem.php';
 
         $usuariosDAO = new DAO('usuarios u left join fotos f on f.id = u.id_foto');
-        if (isset($tcUsername)) {
+        if (isset($tcUsername) and !empty($tcUsername)) {
             $consulta = $usuariosDAO->pesquisar(' u.*, f.caminho ', ' u.username = "' . $tcUsername . '"');
         } else {
             $consulta = $usuariosDAO->pesquisar(' u.*, f.caminho ', ' u.id = ' . $tcId);

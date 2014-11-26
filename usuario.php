@@ -55,6 +55,12 @@
                     </button>';
                                 break;
                         }
+                    } else {
+                        echo '<form action="editar_perfil.php">
+                            <button type="submit" class="btn-default btn">
+                        <span class="glyphicon glyphicon-cog"></span>  Editar Perfil
+                    </button>
+                    </form>';
                     }
                     ?>
                     <!--                 <button type="submit" class="btn btn-danger btn">

@@ -41,12 +41,7 @@
                             <label for="descricao">Sobre Você</label>
                             <textarea id="sobre" class="form-control" name="sobre" rows="3"><?php echo $loUsuario->getPcNome(); ?></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="titulo">Fone</label>
-                            <?php
-                            echo '<input type = "text" class = "form-control" value = "'. $loUsuario->getPcNome().'" name = "fone" placeholder = "Nome">';
-                            ?>
-                        </div>
+                       
                         <div class="form-group">
                             <label for="exampleInputFile">Enviar foto</label>
                             <input type="file" name="arquivo" id="exampleInputFile">
@@ -55,7 +50,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputFile">Enviar miniatura</label>
-                            <input type="file" name="arquivo" id="exampleInputFile">
+                            <input type="file" name="arquivo_mini" id="exampleInputFile">
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                             <p class="help-block">A miniatura é utilizada nos Comentários e na Pesquisa!</p>
 

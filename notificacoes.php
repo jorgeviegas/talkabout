@@ -7,8 +7,6 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Talk About - Notificações</title>
-        <!-- Bootstrap Core CSS -->
-        <!-- Custom CSS -->
         <link href="css/blog-post.css" rel="stylesheet">
         <link href="css/bootstrap-combobox.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -50,6 +48,12 @@
                                 </form>';
                                 break;
                             case 2:
+                                echo '<div class="alert alert-info" role="alert">';
+                                if ($linha['lida'] == 0) {
+                                    echo '<span class="glyphicon glyphicon-bell"></span> <b> Nova! </b>';
+                                }
+                                echo $linha['descricao'] . '                                  
+                                </div>';
                                 break;
 
                             case 3:

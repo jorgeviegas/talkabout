@@ -6,14 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <title>Talk About - Nova Publicação</title>
-
-        <!-- Bootstrap Core CSS -->
-        <!-- Custom CSS -->
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
         <link href="css/blog-post.css" rel="stylesheet">
         <link href="css/bootstrap-combobox.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +37,19 @@
                             <input type="text" class="form-control" name="titulo" placeholder="Título da Publicação">
                         </div>
                         <div class="form-group">
+                            <label for="instituicao">Instituição</label>
+                            <?php
+                            echo Funcoes::montarCombo('instituicoes', 'nome', 0, 0, 0, 'instituicao', '10');
+                            ?>
+                        </div>
+                        <p class="help-block">Outra não listada? <a href="nova_instituicao.php">Clique aqui</a> para cadastrar</p>
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <?php
+                            echo Funcoes::montarCombo('publicacoes_tipos', 'descricao', 0, 0, 0, 'tipo', '99');
+                            ?>
+                        </div>
+                        <div class="form-group">
                             <label for="descricao">Descrição</label>
                             <textarea id="descricao" class="form-control" name="descricao" rows="3" placeholder="Descricao"></textarea>
                         </div>
@@ -50,50 +58,10 @@
                             <input type="file" name="arquivo" id="exampleInputFile">
                             <p class="help-block">O arquivo deve ser nos formatos .jpg, .bmp ou .png!</p>
                         </div>
-                        <div class="form-group">
-                            <label for="instituicao">Instituição</label>
-                            <?php
-                            echo Funcoes::montarCombo('instituicoes', 'nome', 0, 0, 0, 'instituicao', '10');
-                            ?>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipo">Tipo</label>
-                            <?php
-                            echo Funcoes::montarCombo('publicacoes_tipos', 'descricao', 0, 0, 0, 'tipo', '99');
-                            ?>
-                        </div>
-                        <p class="help-block">Outra não listada? <a href="nova_instituicao.php">Clique aqui</a> para cadastrar</p>
-                        <br>
-                        <div class="form-group">
-                            <label for="avaliacao">Avaliação Geral da Instituição</label>
-                            <br>
-                            <input name="avaliacao" id="input-21c" value="0" type="number" class="rating" min=0 max=10 step=0.5 data-size="sm" data-stars="10">
-                            <br>
-                        </div>
 
 
                         <br>
-                        <script>
-                            jQuery(document).ready(function () {
-                                $("#input-21f").rating({
-                                    starCaptions: function(val) {
-                                        if (val < 5) {
-                                            return val;
-                                        } else {
-                                            return 'high';
-                                        }
-                                    },
-                                    starCaptionClasses: function(val) {
-                                        if (val < 5) {
-                                            return 'label label-danger';
-                                        } else {
-                                            return 'label label-success';
-                                        }
-                                    }
-                                });
-                            });
-                        </script>
-
+                        <br>
                         <button type="submit" class="btn btn-default btn-lg">
                             <span class="glyphicon glyphicon-ok"></span> Enviar
                         </button>                    
@@ -103,9 +71,12 @@
             </div>
             <hr>
         </div>
+
+        <?php
+        include ('view/include_rodape.php');
+        ?>
+
         <script src="js/jquery-1.11.0.js"></script>
         <script src="js/bootstrap.min.js"></script>
-
     </body>
-
 </html>

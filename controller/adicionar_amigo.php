@@ -45,7 +45,7 @@ $lcUsernameUsu = $registro['username'];
 $lcMensagem = 'O Usuario ' . $lcNomeUsu . ' (' . $lcUsernameUsu . ') aceitou sua solicitacao de amizade!';
 
 $notificacoesDAO = new DAO('notificacoes');
-$notificacoesDAO->inserir('id_usuario, descricao, tipo', $lcIdAdd . ',' . '"' . $lcMensagem . '",1');
+$notificacoesDAO->inserir('id_usuario, descricao, tipo', $lcIdAdd . ',' . '"' . $lcMensagem . '",2');
 $notificacoesDAO->deletar('id = ' . $lcIdNoti);
 header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

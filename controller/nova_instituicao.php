@@ -24,7 +24,7 @@ if (isset($_POST['email']))
 if (isset($_POST['tipo']))
     $lcTipo = $_POST['tipo'];
 if ($_FILES['arquivo']['error'] == 0) {
-    $_UP['pasta'] = '../view/imagens/';
+    $_UP['pasta'] = './view/imagens/';
     $_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
     $_UP['extensoes'] = array('jpg', 'png', 'gif');
     $_UP['erros'][0] = 'Não houve erro';
@@ -48,25 +48,23 @@ if ($_FILES['arquivo']['error'] == 0) {
         if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $nome_final)) {
             $fotosDAO = new DAO('fotos');
             $nome = $_UP['pasta'] . $nome_final;
-            echo $fotosDAO->inserir('caminho', '"' . $nome . '"');
+            $fotosDAO->inserir('caminho', '"' . $nome . '"');
+            $lcIdFoto = mysql_insert_id();
+            
         } else {
             echo "Não foi possível enviar o arquivo, tente novamente";
         }
     }
 }
-echo 'descricao'.$lcDescricao;
 $instituicoesDAO = new DAO('instituicoes');
 $tcCampos = ' tipo, nome, descricao, fone, email ';
 $tcValores = $lcTipo . ', "' . $lcNome . '","' . $lcDescricao . '","' . $lcTelefone . '","' . $lcEmail . '"';
 if (isset($nome)) {
-    $fotosDAO = new DAO('fotos');
-    $registro = $fotosDAO->pesquisar(' id ', ' caminho = "' . $nome . '"');
-    $registra = mysql_fetch_array($registro);
-    $lcIdFoto = $registra['id'];
     $tcCampos = ' tipo, id_foto, nome, descricao, fone, email ';
     $tcValores = $lcTipo . ',' . $lcIdFoto . ', "' . $lcNome . '","' . $lcDescricao . '","' . $lcTelefone . '","' . $lcEmail . '"';
 };
-echo $tcCampos;
-echo $tcValores;
 $instituicoesDAO->inserir($tcCampos, $tcValores);
+$lcId = mysql_insert_id();
+
+header("Location: ../instituicao.php?inst=" . $lcId);
 ?>

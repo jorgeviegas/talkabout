@@ -56,7 +56,9 @@ if ($lnNumNot == 0) {
                     <a href="nova_publicacao.php">Publicar</a>
                 </li>
                 <li>
-                    <a href="usuario.php">Perfil</a>
+                    <?php
+                    echo '<a href="usuario.php?user='.$_SESSION['username'].'">Perfil</a>';
+                    ?>
                 </li>
                 <li>
                     <?php

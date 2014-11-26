@@ -1,10 +1,4 @@
-/*!
- * Bootstrap v3.2.0 (http://getbootstrap.com)
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -15,46 +9,13 @@ body {
   margin: 0;
 }
 
-.linkGrupoTL{
-color: blue;
-text-align: left;
-}
+.h3tl{
 
-
-.bannerGruposTL{
 color: blue;
 
-}
-
-.ptlDuvidas{
-color: orange;
-text-align: center;
-}
-
-.ptlBanner{
-color: green;
-text-align: center;
-}
-
-.h3tlGrupos{
-text-align: center;
-color: blue;
-}
-
-.h3tlBanner{
-text-align: center;
-color: green;
-}
-
-.h3tlDuvidas{
-text-align: center;
-color: orange;
-}
-
-.bannerAjudaLink{
-color: orange;
 
 }
+
 
 article,
 aside,
@@ -5354,27 +5315,13 @@ a.list-group-item-danger.active:focus {
 .embed-responsive.embed-responsive-4by3 {
   padding-bottom: 75%;
 }
-.quadroD {
+.quadro {
   min-height: 20px;
-  margin-bottom: 20px;
-  background-color: #FFDEAD;
-  border: 1px solid #000044;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  background-color: #efefef;
   border-radius: 4px;
-}
-.quadroB {
-  min-height: 20px;
-  margin-bottom: 20px;
-  background-color: #8FBC8F;
-  border: 1px solid #000044;
-  border-radius: 4px;
-}
-
-.quadroG {
-  min-height: 20px;
-  margin-bottom: 20px;
-  background-color: #6495ED;
-  border: 1px solid #000044;
-  border-radius: 4px;
+  text-align: center;
 }
 
 

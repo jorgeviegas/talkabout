@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 if (isset($_SESSION['id_usuario'])) $lnIdUsuario = $_SESSION['id_usuario'];
 
-$usuario = Funcoes::getUsuariobyId($lnIdUsuario);
+$usuario = Funcoes::getUsuariobyId($lnIdUsuario,'');
 
 if ($usuario == FALSE) {
 } else {

@@ -87,58 +87,15 @@
                     </form>
                     <hr>
                 </div>
-                <!-- Blog Sidebar Widgets Column -->
-                <div class="col-md-4">
 
-                    <!-- Blog Categories Well -->
-                    <div class="well">
-                        <h4>
-                            <center>Instituição</center>
-                        </h4>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <ul>
-                                    <li>
-                                        Antes de realizar o registro de uma nova instituição,
-                                        certifique-se de que a mesma não está cadastrada no sistema.
-                                        Escreva corretamente o nome da instituição a ser cadastrada.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blog Categories Well -->
-                    <div class="well">
-                        <h4><center>Instituição</center></h4>
-                        <div class="row">
-                            <div class="col-lg-6">
-
-                                teste
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- /.row -->
             <hr>
         </div>
-        <!-- /.container -->
-        <!-- jQuery Version 1.11.0 -->
+        <?php
+        include ('view/include_rodape.php');
+        ?>
+
         <script src="js/jquery-1.11.0.js"></script>
-        <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
